@@ -43,12 +43,6 @@ body{
     height: 400px;
     width: 30%;
 }
-
-
-
-
-
-
     </style>
 </head>
 
@@ -63,7 +57,7 @@ body{
     <div class="containerJogos">
         <div class="jogo1">
             <div class="foto1">
-                s
+                Jogo
             </div>
             <h4>Jogo ....</h4>
         </div>
