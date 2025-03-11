@@ -4,47 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ URL:: asset('../../../public/CSS/jogos.css')}}">
+    <link rel="stylesheet" href="/css/jogos.css">
     <title>Escolha um jogo</title>
-    <style>
-        *{
-    margin: 0%;
-    padding: 0px;
-}
-body{
-    background-color: #cac4f8;
-}
-
-#sair{
-    order: -1;
-}
-
-.cabecario{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px;
-    background-color: #7a37e6;
-}
-
-.containerJogos{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.foto1,.foto2,.foto3,.foto4{
-    background-color: blue;
-}
-
-.jogo1, .jogo2, .jogo3, .jogo4{
-    margin: 5%;
-    background-color: black;
-    padding: 10px;
-    height: 400px;
-    width: 30%;
-}
-    </style>
 </head>
 
 <!-- sala do ..... -->
@@ -58,30 +19,32 @@ body{
     <div class="containerJogos">
         <div class="jogo1">
             <div class="foto1">
-                Jogo
+                <img src="/img/images.jpg" class="roblox-imagem" alt="">
             </div>
-            <h4>Jogo ....</h4>
+            <button class="glow-on-hover">Start</button>
         </div>
         <div class="jogo2">
             <div class="foto2">
-                s
+                <img src="/img/images.jpg" class="roblox-imagem" alt="">
             </div>
-            <h4>Jogo ....</h4>
+            <button class="glow-on-hover">Start</button>
         </div>
         <div class="jogo3">
             <div class="foto3">
-                f
+                <img src="/img/images.jpg" class="roblox-imagem" alt="">
             </div>
-            <h4>jogo ....</h4>
+            <button class="glow-on-hover">Start</button>
         </div>
         <div class="jogo4">
             <div class="foto4">
-                f
+                <img src="/img/images.jpg" class="roblox-imagem" alt="">
             </div>
-            <h4>jogo ....</h4>
+            <button class="glow-on-hover">Start</button>
         </div>
     </div>
-
+    <footer class="incerramento">
+        <button id="proximo" class="glow-on-hover">Proximo</button>
+    </footer>
     <script src="./script.js"></script>
 </body>
 
