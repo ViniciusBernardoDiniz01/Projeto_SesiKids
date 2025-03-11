@@ -1,0 +1,37 @@
+*{
+    margin: 0%;
+    padding: 0px;
+}
+body{
+    background-color: #cac4f8;
+}
+
+#sair{
+    order: -1;
+}
+
+.cabecario{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+    background-color: #7a37e6;
+}
+
+.containerJogos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.foto1,.foto2,.foto3,.foto4{
+    background-color: blue;
+}
+
+.jogo1, .jogo2, .jogo3, .jogo4{
+    margin: 5%;
+    background-color: black;
+    padding: 10px;
+    height: 400px;
+    width: 30%;
+}
