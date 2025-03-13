@@ -16,7 +16,7 @@
             <form action=" {{route("user.store")}}" method="POST">
                 @csrf
 
-                <div class="login"><h2>Cadastro</h2></div>
+                <div class="login"><h2>Cadastro!</h2></div>
                 <div class="formulario">
 
                 @if ($errors->any())
