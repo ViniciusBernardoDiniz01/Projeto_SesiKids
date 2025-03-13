@@ -11,7 +11,7 @@ class UserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,20 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Campo nome Obrigatório!',
+            'email.required' => 'Campo email Obrigatório',
+            'email.email' => 'Insira um email válido',
+            'password.required' => 'Campo senha Obrigatório',
+            'password.min' => 'A senha deve conter no mínimo :min caracteres',
         ];
     }
 }

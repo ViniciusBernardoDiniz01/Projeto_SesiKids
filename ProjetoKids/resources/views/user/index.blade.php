@@ -13,15 +13,26 @@
 
 <body>
     <header>
-        
-        <button onclick="" class="botao">
-            <h2>Sou Professor!</h2>
-        </button>
+        <a href="{{ route("user.create")}}">
+            <button onclick="" class="botao">
+                <h2>Sou Professor!</h2>
+            </button>
+        </a>
     </header>
+
+    @if (session("sucess"))
+        <p style="color: #0f0">
+            {{ session("sucess") }}
+        </p>
+    @endif
 
     <div class="container">
         <a><img src="https://fontmeme.com/permalink/250311/61c41f729401a7ec65436f549479c64c.png" alt="fontes-pixeladas" border="0"></a>
-        <button class="botao2"><a><img src="https://fontmeme.com/permalink/250311/922e7dfd91076e895973bd6e2ad24f96.png" alt="fontes-pixeladas"></a></button>
+        <button class="botao2">
+                <a>
+                    <a href="{{ route("user.jogos") }}"><img src="https://fontmeme.com/permalink/250311/922e7dfd91076e895973bd6e2ad24f96.png" alt="fontes-pixeladas"></a>
+                </a>
+        </button>
 
     </div>
     <script src="./script.js"></script>

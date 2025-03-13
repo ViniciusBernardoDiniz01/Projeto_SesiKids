@@ -1,5 +1,6 @@
 *{
     overflow: hidden;
+    font-family: sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -22,7 +23,7 @@ body{
     background-color: #8e68e6;
     color: white;
     border: 0;
-
+    cursor: pointer;
 }
 
 .container{
@@ -40,4 +41,5 @@ body{
     margin-top: 20px;
     background-color: #ecb1ff;
     border: 3px solid #330084;
+    cursor: pointer;
 }

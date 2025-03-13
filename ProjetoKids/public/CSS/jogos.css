@@ -1,6 +1,7 @@
 
 *{
     margin: 0%;
+    font-family: sans-serif;
     padding: 0px;
 }
 body{
@@ -8,11 +9,13 @@ body{
 }
 
 #sair{
-    background-color: #2e1b5b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#fff;
     cursor: pointer;
     border: none;
     border-radius: 15px;
-    color: #fff;
     width: 5%;
     height: 40px;
     font-size: 18px;
@@ -20,7 +23,8 @@ body{
 }
 
 #sair:hover{
-    background-color: #0004ff;
+    background-color: #ff0800;
+    scale: 1.1;
 }
 
 .cabecario{
