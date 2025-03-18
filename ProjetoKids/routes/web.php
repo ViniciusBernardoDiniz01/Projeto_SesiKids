@@ -12,3 +12,5 @@ Route::post('/store-user', [UserController::class, 'store'])->name('user.store')
 Route::get('/jogos-user', [UserController::class, 'jogos'])->name('user.jogos');
 
 Route::get('/login-user', [UserController::class, 'usuarios'])->name('user.login');
+
+Route::get('/show-user/{user}', [UserController::class, 'show'])->name('user.show');

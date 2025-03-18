@@ -43,3 +43,7 @@ body{
     border: 3px solid #330084;
     cursor: pointer;
 }
+
+.botao:hover{
+    background-color: #6b3f9e;
+}

@@ -15,7 +15,7 @@
     <header>
         <a href="{{ route("user.create")}}">
             <button onclick="" class="botao">
-                <h2>Sou Professor!</h2>
+                <h2>Sou Professor</h2>
             </button>
         </a>
     </header>

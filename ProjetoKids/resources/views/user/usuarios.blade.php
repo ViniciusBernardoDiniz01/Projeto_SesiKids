@@ -7,10 +7,19 @@
     <title>Pagina Login</title>
 </head>
 <body>
+    @forelse($users as $Sist)
+        ID: {{ $Sist->id }}<br>
+        Nome: {{ $Sist->name }}<br>
+        E-mail: {{ $Sist->email }}<br>
+        <a href="{{ route('user.show', ['user'=> $Sist->id ])}}">Visualizar</a><br>
+        <hr>
+    @empty
+
+    @endforelse
+    
     <header><h1>Bem vindo a nossa pagina de login para Professores</h1></header>
     <main>
         <section>
-            
             <form action="text">
                 <div class="login"><h2>login</h2></div>
                 <div class="formulario">
