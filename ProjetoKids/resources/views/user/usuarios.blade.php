@@ -18,7 +18,8 @@
                 <input type="text" class="input-email" id="Email" name="email"><br>
                 <label for="lname">Senha:</label><br>
                 <input type="text" class="input-senha" id="Senha" name="password"><br>
-                <button class="button">Enviar</button>
+                <button class="button">Enviar</button><br>
+                <center><a href="{{ route('user.create')}}">Não tenho login</a></center>
                 </div>
             </form>
         </section>
