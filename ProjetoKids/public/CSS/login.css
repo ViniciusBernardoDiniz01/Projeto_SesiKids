@@ -37,7 +37,7 @@ form{
     background-color: #7a37e6;
     justify-content: center;
     display: flex;
-    border-radius: 20px, 20px, 0px, 0px;
+    border-radius: 20px 20px 0px 0px;
     color: white;
     margin-bottom: 10px;
     padding: 30px;
@@ -75,4 +75,40 @@ input{
     border-radius: 15px;
     padding: 10px;
     margin: 5px;
+}
+
+.boston{
+    border-radius: 10px;
+    background-color: #7a37e6;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 2px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+footer{
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 0.79rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.boston{
+    text-decoration: none;
+    color: #fff;
+}
+
+.boston:hover{
+    background-color: #6b3f9e;
 }

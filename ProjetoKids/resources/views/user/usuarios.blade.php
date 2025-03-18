@@ -7,15 +7,6 @@
     <title>Pagina Login</title>
 </head>
 <body>
-    @forelse($users as $Sist)
-        ID: {{ $Sist->id }}<br>
-        Nome: {{ $Sist->name }}<br>
-        E-mail: {{ $Sist->email }}<br>
-        <a href="{{ route('user.show', ['user'=> $Sist->id ])}}">Visualizar</a><br>
-        <hr>
-    @empty
-
-    @endforelse
     
     <header><h1>Bem vindo a nossa pagina de login para Professores</h1></header>
     <main>
@@ -31,6 +22,30 @@
                 </div>
             </form>
         </section>
-    </main>
+    <footer 
+        style="background-color: #fff;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        font-size: 0.79rem;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;">
+        
+        @forelse($users as $Sist)
+        <br>
+        ID: {{ $Sist->id }}<br>
+        Nome: {{ $Sist->name }}<br>
+        E-mail: {{ $Sist->email }}<br>
+        <a href="{{ route('user.show', ['user'=> $Sist->id ])}}" class="boston">Visualizar</a><br>
+        <hr>
+        @empty
+
+        @endforelse
+    </footer>
+</main>
 </body>
 </html>
