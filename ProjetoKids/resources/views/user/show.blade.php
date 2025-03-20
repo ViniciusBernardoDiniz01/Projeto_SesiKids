@@ -22,6 +22,18 @@
     ">
     Voltar
     </a>
+    <a href="{{ route('user.edit', ['user'=> $user->id ])}}" class="boston" style="background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 22px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 0px;
+        cursor: pointer;
+        border-radius: 12px;
+        ">Editar</a><br>
     <h1>Visualizar Usuario</h1>
 
     ID: {{ $user->id }}<br>

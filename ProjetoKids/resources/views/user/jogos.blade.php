@@ -21,29 +21,29 @@
             <div class="foto1">
                 <img src="/img/images.jpg" class="roblox-imagem" alt="">
             </div>
-            <button class="glow-on-hover">Start</button>
+            <a href="https://www.roblox.com/pt" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
         </div>
         <div class="jogo2">
             <div class="foto2">
                 <img src="/img/images.jpg" class="roblox-imagem" alt="">
             </div>
-            <button class="glow-on-hover">Start</button>
+            <a href="https://www.roblox.com/pt" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
         </div>
         <div class="jogo3">
             <div class="foto3">
                 <img src="/img/images.jpg" class="roblox-imagem" alt="">
             </div>
-            <button class="glow-on-hover">Start</button>
+            <a href="https://www.roblox.com/pt" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
         </div>
         <div class="jogo4">
             <div class="foto4">
                 <img src="/img/images.jpg" class="roblox-imagem" alt="">
             </div>
-            <button class="glow-on-hover">Start</button>
+            <a href="https://www.roblox.com/pt" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
         </div>
     </div>
     <footer class="incerramento">
-        <button id="proximo" class="glow-on-hover">Proximo</button>
+        <a href="https://www.roblox.com/pt" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Proximo</a>
     </footer>
     <script src="./script.js"></script>
 </body>

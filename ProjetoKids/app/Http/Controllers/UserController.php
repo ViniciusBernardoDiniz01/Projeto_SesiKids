@@ -19,13 +19,30 @@ class UserController extends Controller
         return view("user.show", ['user' => $user]);
     }
 
+    public function edit(User $user){
+        return view("user.edit", ['user' => $user]);
+    }
+
+    public function update(UserRequest $request, User $user){
+        $request->validated();
+
+        // edita o usuário no banco de dados
+        $user->update([
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => bcrypt($request->password),
+        ]);
+        
+        return redirect()->route('user.index')->with("success", "Usuario atualizado");
+    }
+
     public function usuarios(){
         $users = User::all(); // Obter todos os usuários
         return view("user.usuarios", ['users' => $users]);
     }
 
-    public function store(UserRequest $request){
-        $request->validated();
+    public function store(UserRequest $request){ 
+        $request->validated(); 
 
         User::create([
             "name" => $request->name,
@@ -33,7 +50,7 @@ class UserController extends Controller
             "password" => bcrypt($request->password),
         ]);
 
-        return redirect()->route('user.login')->with("success", "Usuario cadastrado");
+        return redirect()->route('user.index')->with("success", "Usuario cadastrado");
     }
 
     public function index(){

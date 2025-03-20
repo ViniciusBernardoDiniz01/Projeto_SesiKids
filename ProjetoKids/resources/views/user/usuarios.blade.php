@@ -19,7 +19,7 @@
                 <label for="lname">Senha:</label><br>
                 <input type="text" class="input-senha" id="Senha" name="password"><br>
                 <button class="button">Enviar</button><br>
-                <center><a href="{{ route('user.create')}}">Não tenho login</a></center>
+                <center><a href="{{ route('user.create')}}">Não tenho login </a><a href=""> / Esqueci meus dados</a></a></center>
                 </div>
             </form>
         </section>
@@ -31,9 +31,9 @@
         border-radius: 10px;
         padding: 10px;
         margin: 10px;
-        font-size: 0.79rem;
+        font-size: 0.8rem;
         display: flex;
-        flex-direction: column;
+        flex-direction: column; 
         text-decoration: none;">
         
         @forelse($users as $Sist)
@@ -41,7 +41,8 @@
         ID: {{ $Sist->id }}<br>
         Nome: {{ $Sist->name }}<br>
         E-mail: {{ $Sist->email }}<br>
-        <a href="{{ route('user.show', ['user'=> $Sist->id ])}}" class="boston">Visualizar</a><br>
+        <a href="{{ route('user.show', ['user'=> $Sist->id ])}}" class="boston">Visualizar</a>
+        <a href="{{ route('user.edit', ['user'=> $Sist->id ])}}" class="boston">Editar</a><br>
         <hr>
         @empty
 
