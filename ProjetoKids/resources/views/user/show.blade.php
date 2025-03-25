@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="butoes">
     <a href="{{ route('user.login') }}" 
     style="background-color: #4CAF50; /* Green */
     border: none;
@@ -22,6 +23,7 @@
     ">
     Voltar
     </a>
+    
     <a href="{{ route('user.edit', ['user'=> $user->id ])}}" class="boston" style="background-color: #4CAF50; /* Green */
         border: none;
         color: white;
@@ -33,8 +35,32 @@
         margin: 2px 0px;
         cursor: pointer;
         border-radius: 12px;
-        ">Editar</a><br>
+        ">Editar</a>
+
+    <form action="{{ route('user.destroy', ['user'=> $user->id ])}}" method="POST" style="margin: 0; padding: 0;">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="boston" onclick="return confirm('Tem certeza que deseja deletar usuario?')" style="background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 22px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 0px;
+        cursor: pointer;
+        border-radius: 12px;
+        ">Excluir</button>
+    </form>
+    </div>
     <h1>Visualizar Usuario</h1>
+
+    @if (session("sucess"))
+        <p style="color: #0f0">
+            {{ session("sucess") }}
+        </p>
+    @endif
 
     ID: {{ $user->id }}<br>
     Nome: {{ $user->name }}<br>

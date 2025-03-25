@@ -35,14 +35,24 @@
         display: flex;
         flex-direction: column; 
         text-decoration: none;">
-        
+        @if (session("sucess"))
+        <p style="color: #0f0">
+            {{ session("sucess") }}
+        </p>
+        @endif
         @forelse($users as $Sist)
         <br>
         ID: {{ $Sist->id }}<br>
         Nome: {{ $Sist->name }}<br>
         E-mail: {{ $Sist->email }}<br>
         <a href="{{ route('user.show', ['user'=> $Sist->id ])}}" class="boston">Visualizar</a>
-        <a href="{{ route('user.edit', ['user'=> $Sist->id ])}}" class="boston">Editar</a><br>
+        <a href="{{ route('user.edit', ['user'=> $Sist->id ])}}" class="boston">Editar</a>
+        {{-- <a href="{{ route('user.destroy', ['user'=> $Sist->id ])}}" class="boston">Excluir</a> --}}
+        <form action="{{ route('user.destroy', ['user'=> $Sist->id ])}}" method="POST" style="margin: 0; padding: 0;">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="boston" onclick="return confirm('Tem certeza que deseja deletar usuario ?')">Excluir</button>
+        </form>
         <hr>
         @empty
 

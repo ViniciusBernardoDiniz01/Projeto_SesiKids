@@ -20,12 +20,6 @@
         </a>
     </header>
 
-    @if (session("sucess"))
-        <p style="color: #0f0">
-            {{ session("sucess") }}
-        </p>
-    @endif
-
     <div class="container">
         <a><img src="https://fontmeme.com/permalink/250311/61c41f729401a7ec65436f549479c64c.png" alt="fontes-pixeladas" border="0"></a>
         <button class="botao2">

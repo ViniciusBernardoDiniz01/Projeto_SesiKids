@@ -33,7 +33,7 @@ class UserController extends Controller
             "password" => bcrypt($request->password),
         ]);
         
-        return redirect()->route('user.index')->with("success", "Usuario atualizado");
+        return redirect()->route('user.login')->with("success", "Usuario atualizado");
     }
 
     public function usuarios(){
@@ -50,7 +50,12 @@ class UserController extends Controller
             "password" => bcrypt($request->password),
         ]);
 
-        return redirect()->route('user.index')->with("success", "Usuario cadastrado");
+        return redirect()->route('user.login')->with("success", "Usuario cadastrado");
+    }
+
+    public function destroy(User $user){
+        $user->delete();
+        return redirect()->route('user.login')->with("success", "Usuario deletado");
     }
 
     public function index(){
