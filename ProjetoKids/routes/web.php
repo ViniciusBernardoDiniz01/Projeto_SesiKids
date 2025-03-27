@@ -1,7 +1,16 @@
 <?php
 
+use App\Http\Controllers\RegistradosController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
+//registrados
+
+Route::get('/table-user', [RegistradosController::class, 'create'])->name('registrados.index');
+
+
+
+//user
 
 Route::get('/', [UserController::class, 'index'])->name('user.index');
 
