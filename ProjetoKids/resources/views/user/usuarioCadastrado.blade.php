@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Bem vindo a pagina Adimin</h1>
+        <h1>Bem vindo a pagina Admin</h1>
     </header>
     <div class="body">
     <footer>
