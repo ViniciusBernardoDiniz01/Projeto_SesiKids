@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="butoes">
-    <a href="{{ route('user.login') }}" 
+    <a href="{{ route('user.usuarioCadastrado') }}" 
     style="background-color: #4CAF50; /* Green */
     border: none;
     color: white;

@@ -22,6 +22,8 @@ Route::get('/jogos-user', [UserController::class, 'jogos'])->name('user.jogos');
 
 Route::get('/login-user', [UserController::class, 'usuarios'])->name('user.login');
 
+Route::get('/cadastrados-user', [UserController::class, 'usuarioCadastrado'])->name('user.usuarioCadastrado');
+
 // esta rota é para mostrar o usuário
 Route::get('/show-user/{user}', [UserController::class, 'show'])->name('user.show');
 

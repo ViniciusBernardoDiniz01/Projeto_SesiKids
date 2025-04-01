@@ -19,6 +19,11 @@ class UserController extends Controller
         return view("user.show", ['user' => $user]);
     }
 
+    public function usuarioCadastrado(){
+        $users = User::all(); // Obter todos os usuários
+        return view("user.usuarioCadastrado", ['users' => $users]);
+    }
+
     public function edit(User $user){
         return view("user.edit", ['user' => $user]);
     }

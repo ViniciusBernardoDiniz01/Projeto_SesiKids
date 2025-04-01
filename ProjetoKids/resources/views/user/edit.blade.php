@@ -4,36 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/show.css') }}">
     <title>Editar Usuario</title>
 </head>
 <body>
-    <a href="{{ route('user.login') }}" 
-    style="background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 22px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 2px 0px;
-    cursor: pointer;
-    border-radius: 12px;
-    ">
+    <a href="{{ route('user.show', ['user'=> $user->id ])}}">
     Voltar
     </a>
-    <a href="{{ route('user.show', ['user'=> $user->id ])}}" class="boston" style="background-color: #4CAF50; /* Green */
-        border: none;
-        color: white;
-        padding: 10px 22px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 2px 0px;
-        cursor: pointer;
-        border-radius: 12px;
-        ">Visualizar</a><br>
+    <a href="{{ route('user.show', ['user'=> $user->id ])}}" class="boston">Visualizar</a><br>
     <section>
         <form action=" {{route('user.update', ['user' => $user->id])}}" method="POST">
             @csrf

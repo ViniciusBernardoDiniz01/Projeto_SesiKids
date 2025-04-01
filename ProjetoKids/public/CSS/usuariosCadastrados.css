@@ -1,0 +1,115 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 0px 0px 15px 15px; /* Bordas arredondadas no topo */
+}
+
+/* Corpo da página */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container principal */
+footer{
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Alinha verticalmente */
+    /* max-width: 470px; */
+}
+.fotterall {
+    display: flex;
+    flex-direction: row; /* Coloca os itens na mesma linha */
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center; /* Alinha verticalmente */
+    margin: 15px;
+    padding: 10px;
+    width: 100%; /* Garante que ocupe toda a largura disponível */
+    text-align: left; /* Alinha o texto à esquerda */
+    gap: 10px; /* Espaçamento entre os itens */
+}
+
+.fotterall{
+    gap: 10px;
+}
+/* Mensagem de sucesso */
+p {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0f0;
+}
+
+#boston-2{
+    background-color: orange;
+}
+
+#boston-2:hover{
+    background-color: #ff8c00;
+}
+.text{
+    padding: 10px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: #ddd;
+}
+
+.botaos{
+    display: flex;
+    justify-content: center; /* Espaço entre os elementos */
+    align-items: center; /* Alinha verticalmente */
+    flex-direction: row; /* Coloca os itens na mesma linha */
+    margin: 10px;
+}
+
+/* Botões */
+.boston {
+    display: inline-block;
+    text-decoration: none;
+    background: #007bff;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+    margin: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+.boston:hover {
+    background: #0056b3;
+}
+
+/* Botão de excluir */
+button.boston {
+    background: #dc3545;
+}
+
+button.boston:hover {
+    background: #a71d2a;
+}
