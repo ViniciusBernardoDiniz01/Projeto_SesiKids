@@ -8,6 +8,7 @@
 </head>
 <body>
     <header>
+        <a href="{{ route('user.index') }}" class="h1-titulo">Voltar</a>
         <h1>Bem vindo a nossa pagina</h1>
         <b><h3>Crie sua conta!</h3></b>
     </header>

@@ -8,36 +8,67 @@
 
 /* Estilo do cabeçalho */
 header {
-    background-color: #007bff;
+    background-color: #6a0dad; /* Roxo claro */
     color: #fff;
     padding: 10px 20px;
     text-align: center;
     border-radius: 0px 0px 15px 15px; /* Bordas arredondadas no topo */
 }
 
+.h1-titulo {
+    position: relative;
+    left: 30%;
+}
+
 /* Corpo da página */
 body {
-    background-color: #f4f4f4;
+    background-color: #ede7f6; /* Roxo muito claro */
     color: #333;
 }
-.body{
+
+.body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
+header {
+    display: flex;
+    align-items: space-between;
+}
+
+.link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #9575cd; /* Roxo médio */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.link:hover {
+    background-color: #7e57c2; /* Roxo um pouco mais escuro */
+    text-decoration: none;
+    color: #ffffff; /* Roxo escuro */
+}
+
 /* Container principal */
-footer{
-    background: #fff;
+footer {
+    background: #ede7f6; /* Roxo muito claro */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center; /* Alinha verticalmente */
-    /* max-width: 470px; */
 }
+
 .fotterall {
     display: flex;
     flex-direction: row; /* Coloca os itens na mesma linha */
@@ -50,25 +81,27 @@ footer{
     gap: 10px; /* Espaçamento entre os itens */
 }
 
-.fotterall{
+.fotterall {
     gap: 10px;
 }
+
 /* Mensagem de sucesso */
 p {
     text-align: center;
     font-size: 16px;
     font-weight: bold;
-    color: #0f0;
+    color: #6a0dad; /* Roxo escuro */
 }
 
-#boston-2{
+#boston-2 {
     background-color: orange;
 }
 
-#boston-2:hover{
+#boston-2:hover {
     background-color: #ff8c00;
 }
-.text{
+
+.text {
     padding: 10px;
 }
 
@@ -78,7 +111,7 @@ hr {
     background: #ddd;
 }
 
-.botaos{
+.botaos {
     display: flex;
     justify-content: center; /* Espaço entre os elementos */
     align-items: center; /* Alinha verticalmente */
@@ -90,7 +123,7 @@ hr {
 .boston {
     display: inline-block;
     text-decoration: none;
-    background: #007bff;
+    background: #7e57c2; /* Roxo médio */
     color: #fff;
     padding: 8px 12px;
     border-radius: 5px;
@@ -102,14 +135,14 @@ hr {
 }
 
 .boston:hover {
-    background: #0056b3;
+    background: #5e35b1; /* Roxo mais escuro */
 }
 
 /* Botão de excluir */
 button.boston {
-    background: #dc3545;
+    background: #dc3545; /* Vermelho original */
 }
 
 button.boston:hover {
-    background: #a71d2a;
+    background: #a71d2a; /* Vermelho escuro */
 }

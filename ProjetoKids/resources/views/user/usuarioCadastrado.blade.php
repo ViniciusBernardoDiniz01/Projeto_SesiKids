@@ -9,7 +9,8 @@
 </head>
 <body>
     <header>
-        <h1>Bem vindo a pagina Admin</h1>
+        <a href="{{route('user.login')}}" class="link">Voltar</a>
+        <h1 class="h1-titulo">Bem vindo a pagina Admin</h1>
     </header>
     <div class="body">
     <footer>

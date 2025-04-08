@@ -8,7 +8,10 @@
 </head>
 <body>
     
-    <header><h1>Bem vindo a nossa pagina de login para Professores</h1></header>
+    <header>
+        <a href="{{ route('user.create') }}" class="link-2">Voltar</a>
+        <h1 class="h1-titulo">Bem vindo a nossa pagina de login para Professores</h1>
+    </header>
     <main>
         <section>
             <form action="text">
@@ -21,7 +24,7 @@
                 <button class="button">Enviar</button><br>
                 <center><a href="{{ route('user.create')}}">Não tenho login </a><a href=""> / Esqueci meus dados</a></a></center>
                 </div>
-                <a href={{route('user.usuarioCadastrado')}}>ooooo</a>
+                <center><a href={{route('user.usuarioCadastrado')}} class="link">Admin</a></center>
             </form>
         </section>
 </main>
