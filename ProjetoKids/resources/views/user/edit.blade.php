@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/edit.css') }}">
-    <title>Editar Usuario</title>
+    <title>Editar Usuário</title>
 </head>
 <body>
     <a href="{{ route('user.show', ['user'=> $user->id ])}}">
@@ -18,7 +18,7 @@
             @method('PUT')
 
 
-            <div class="login"><h2>Editar Usuario</h2></div>
+            <div class="login"><h2>Editar Usuário</h2></div>
             <div class="formulario">
 
             @if ($errors->any())
@@ -29,10 +29,10 @@
             @endforeach
             @endif
 
-            <label for="fname">Nome</label><br>
+            <label for="fname">Nome:</label><br>
             <input type="text" class="input-email" id="Email" name="name" value="{{ old('name', $user->name )}}"><br>
 
-            <label for="fname">Email:</label><br>
+            <label for="fname">E-mail:</label><br>
             <input type="email" class="input-email" id="Email" name="email" value="{{ old('email', $user->email)}}"><br>
 
             <label for="lname">Senha:</label><br>

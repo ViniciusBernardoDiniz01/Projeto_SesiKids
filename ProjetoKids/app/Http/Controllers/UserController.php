@@ -60,7 +60,7 @@ class UserController extends Controller
 
     public function destroy(User $user){
         $user->delete();
-        return redirect()->route('user.login')->with("success", "Usuario deletado");
+        return redirect()->route('user.usuarioCadastrado')->with("success", "Usuario deletado");
     }
 
     public function index(){

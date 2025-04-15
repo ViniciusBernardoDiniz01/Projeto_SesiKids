@@ -22,7 +22,7 @@
         <button type="submit" class="boston" onclick="return confirm('Tem certeza que deseja deletar usuario?')">Excluir</button>
     </form>
     </div>
-    <h1>Visualizar Usuario</h1>
+    <h1>Visualizar Usuário</h1>
 
     @if (session("sucess"))
         <p style="color: #0f0">

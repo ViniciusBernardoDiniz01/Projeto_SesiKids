@@ -18,14 +18,15 @@
                 <h2>Sou Professor</h2>
             </button>
         </a>
+        <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
     </header>
 
     <div class="container">
         <a><img src="https://fontmeme.com/permalink/250311/61c41f729401a7ec65436f549479c64c.png" alt="fontes-pixeladas" border="0"></a>
         <button class="botao2">
-                <a>
-                    <a href="{{ route("user.jogos") }}"><img src="https://fontmeme.com/permalink/250311/922e7dfd91076e895973bd6e2ad24f96.png" alt="fontes-pixeladas"></a>
-                </a>
+            <a href="{{ route("user.jogos") }}">
+                <img src="https://fontmeme.com/permalink/250311/922e7dfd91076e895973bd6e2ad24f96.png" alt="fontes-pixeladas">
+            </a>
         </button>
 
     </div>

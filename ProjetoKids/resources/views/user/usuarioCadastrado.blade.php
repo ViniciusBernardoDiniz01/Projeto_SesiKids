@@ -10,7 +10,7 @@
 <body>
     <header>
         <a href="{{route('user.login')}}" class="link">Voltar</a>
-        <h1 class="h1-titulo">Bem vindo a pagina Admin</h1>
+        <h1 class="h1-titulo">Bem-vindo à página Admin</h1>
     </header>
     <div class="body">
     <footer>

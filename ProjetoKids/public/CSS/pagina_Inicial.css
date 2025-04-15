@@ -20,11 +20,12 @@ body{
     border-radius: 51px;
     margin-top: 25px;
     margin-left: 25px;
-    background-color: #8e68e6;
-    color: white;
-    border: 0;
+    background-color: #ecb1ff;
+    color: #330084;
+    border: 3px solid #330084;
     cursor: pointer;
 }
+
 
 .container{
     display: flex;
@@ -44,6 +45,19 @@ body{
     cursor: pointer;
 }
 
+.botao2:hover{
+    background-color: #d6a3ff;
+    
+}
+
+.logo-sesi{
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 .botao:hover{
-    background-color: #6b3f9e;
+    background-color: #d6a3ff;
 }
