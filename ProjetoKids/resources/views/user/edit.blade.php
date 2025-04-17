@@ -21,12 +21,14 @@
             <div class="login"><h2>Editar Usuário</h2></div>
             <div class="formulario">
 
-            @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                <p style="color: #f00">
-                    {{ $error }}
-                </p>
-            @endforeach
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li style="color: red">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             @endif
 
             <label for="fname">Nome:</label><br>
@@ -35,12 +37,34 @@
             <label for="fname">E-mail:</label><br>
             <input type="email" class="input-email" id="Email" name="email" value="{{ old('email', $user->email)}}"><br>
 
-            <label for="lname">Senha:</label><br>
-            <input type="password" class="input-senha" id="Senha" name="password"><br>
+            <label for="password">Senha:</label>
+                <div class="mostrar">
+                    <input type="password" class="input-senha" id="password" name="password">
+                    <span role="button" class="olho" onclick="togglePassword('password', this)">👁</span>
+                </div>
+            
+            <label for="password_confirmation">Confirmar Senha:</label>
+                <div class="mostrar">
+                    <input type="password" class="input-senha" id="password_confirmation" name="password_confirmation">
+                    <span role="button" class="olho" onclick="togglePassword('password_confirmation', this)">👁</span>
+                </div>
 
             <button type="submit" class="button">Enviar</button><br>
             </div>
         </form>
     </section>
+
+    <script>
+    function togglePassword(inputId, element) {
+    const input = document.getElementById(inputId);
+    if (input.type === "password") {
+        input.type = "text";
+        element.innerHTML = "🙈"; // Ícone para ocultar
+    } else {
+        input.type = "password";
+        element.innerHTML = "👁"; // Ícone para mostrar
+    }
+}
+    </script>
 </body>
 </html>

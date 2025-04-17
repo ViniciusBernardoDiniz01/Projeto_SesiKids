@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     font-family: sans-serif;
     padding: 0;
 }
 
-body{
+body {
     background-image: url(/img/2.jpg);
     background-size: cover;
     height: 100vh;
@@ -12,29 +12,64 @@ body{
     overflow-x: hidden;
 }
 
-header{
+header {
     background-color: #7a37e6;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+.heade {
     justify-content: center;
     align-items: center;
     display: flex;
-    padding: 30px;
-    color: white;
+    padding: 20px;
     flex-direction: column;
+    background-color: #cf37e6;
 }
 
-form{
-    background-color: #dfd9ff;
+.h1-titulo {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: aqua;
+}
+
+span {
+    cursor: pointer;
+}
+
+span:hover {
+    opacity: 0.5;
+}
+
+.formulario {
+    padding: 15px;
+}
+
+form {
+    background-color: #dfd9ff;
+    justify-content: start;
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
-    margin-right: 800px;
-    margin-top: 70px;
-    padding: 0px;
+    margin: 70px auto;
     border-radius: 20px;
+    width: 50%; /* Define largura padrão */
+    max-width: 600px; /* Limita a largura máxima */
+    box-sizing: border-box;
 }
 
-.login{
+.login {
     background-color: #7a37e6;
     justify-content: center;
     display: flex;
@@ -44,36 +79,97 @@ form{
     padding: 30px;
 }
 
-.button{
+.button {
     border-radius: 15px;
     background-color: #7a37e6;
     color: white;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    margin-top: 10px;
+    width: 100%;
 }
 
-.input-email{
-    border-radius: 15px;
-    padding: 20px;
-}
-
-.input-senha{
-    border-radius: 15px;
-    padding: 20px;
-}
-
-.formulario{
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-input{
+.input-email,
+.input-senha,
+input[type="text"],
+input[type="email"],
+input[type="password"]
+input[type="comfirm_password"] {
+    width: 100%;
     border: solid 0.5px #cf37e6;
-    border-radius: 15px;
-    padding: 10px;
-    margin: 5px;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+/* Estilização do container de senha com o olho */
+.mostrar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+
+/* Ícone do olho */
+.olho {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    user-select: none;
+}
+
+/* Ícone ao passar o mouse */
+.olho:hover {
+    color: #000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    form {
+        width: 80%; /* Reduz a largura em telas menores */
+        margin: 50px auto;
+    }
+
+    .button {
+        padding: 10px; /* Ajusta o padding do botão */
+    }
+
+    .input-email,
+    .input-senha,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 15px; /* Ajusta o padding dos campos */
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 90%; /* Quase toda a largura da tela */
+        margin: 30px auto;
+    }
+
+    .button {
+        padding: 8px; /* Ajusta o padding do botão */
+        font-size: 14px; /* Reduz o tamanho da fonte do botão */
+    }
+
+    .input-email,
+    .input-senha,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 10px; /* Ajusta o padding dos campos */
+        font-size: 12px; /* Reduz ainda mais o tamanho da fonte */
+    }
 }

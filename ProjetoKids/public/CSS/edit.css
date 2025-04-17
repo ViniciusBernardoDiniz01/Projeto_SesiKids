@@ -128,3 +128,33 @@ footer {
 .shadow {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.mostrar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-senha {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.olho {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #666;
+    user-select: none;
+}
+
+.olho:hover {
+    color: #000;
+}
