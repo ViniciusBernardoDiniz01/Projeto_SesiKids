@@ -11,6 +11,8 @@ body{
     width: 100vw;
 }
 
+
+
 header{
     background-color: #7a37e6;
     justify-content: space-between;
@@ -83,10 +85,7 @@ form{
     padding: 20px;
 }
 
-.input-senha{
-    border-radius: 15px;
-    padding: 20px;
-}
+
 
 .input-email:focus{
     border-color: #6a0dad; /* Roxo escuro */
@@ -111,6 +110,40 @@ input{
     border-radius: 15px;
     padding: 10px;
     margin: 5px;
+}
+
+.mostrar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Garante que o container ocupe toda a largura */
+}
+
+.input-senha {
+    width: 100%; /* O input ocupa toda a largura do container */
+    padding-right: 40px; /* Espaço para o ícone do olho */
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 16px;
+    border: solid 0.5px #cf37e6;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.olho {
+    position: absolute;
+    right: 10px; /* Posiciona o ícone no lado direito do input */
+    cursor: pointer;
+    font-size: 25px;
+    color: #666;
+    user-select: none;
+    margin-right: 10px; 
+    margin-top: -5px;
+}
+
+.olho:hover {
+    color: #000; /* Muda a cor ao passar o mouse */
+    opacity: 0.8;
 }
 
 .boston{
@@ -169,4 +202,73 @@ footer{
 
 .boston:hover{
     background-color: #6b3f9e;
+}
+
+/* Responsividade para telas menores que 768px (tablets e celulares grandes) */
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .h1-titulo {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    form {
+        width: 90%; /* Reduz a largura do formulário */
+        margin: 10px;
+    }
+
+    .button {
+        padding: 15px; /* Ajusta o tamanho do botão */
+        font-size: 14px;
+    }
+
+    .input-email,
+    .input-senha {
+        padding: 15px; /* Ajusta o padding dos inputs */
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    .olho {
+        font-size: 20px; /* Ajusta o tamanho do ícone */
+    }
+}
+
+/* Responsividade para telas menores que 480px (celulares pequenos) */
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    .h1-titulo {
+        font-size: 18px; /* Reduz o tamanho do título */
+    }
+
+    form {
+        width: 100%; /* O formulário ocupa toda a largura */
+        margin: 10px;
+    }
+
+    .button {
+        padding: 10px; /* Ajusta o tamanho do botão */
+        font-size: 12px;
+    }
+
+    .input-email,
+    .input-senha {
+        padding: 10px; /* Ajusta o padding dos inputs */
+        font-size: 12px; /* Reduz o tamanho da fonte */
+    }
+
+    .olho {
+        font-size: 18px; /* Ajusta o tamanho do ícone */
+    }
+
+    .link {
+        font-size: 12px; /* Reduz o tamanho dos links */
+    }
 }

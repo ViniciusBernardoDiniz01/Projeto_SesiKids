@@ -17,16 +17,37 @@
             <form action="text">
                 <div class="login"><h2>Login</h2></div>
                 <div class="formulario">
-                <label for="fname">Email:</label><br>
-                <input type="text" class="input-email" id="Email" name="email"><br>
-                <label for="lname">Senha:</label><br>
-                <input type="text" class="input-senha" id="Senha" name="password"><br>
-                <button class="button">Enviar</button><br>
-                <center><a href="{{ route('user.create')}}">Não tenho login</a><a href=""> / Esqueci meus dados</a></center>
+                    <label for="fname">Email:</label><br>
+                    <input type="text" class="input-email" id="Email" name="email"><br>
+                    
+                    <label for="lname">Senha:</label><br>
+                    <div class="mostrar">
+                        <input type="password" class="input-senha" id="Senha" name="password">
+                        <span role="button" class="olho" onclick="togglePassword('Senha', this)">👀</span>
+                    </div>
+                    
+                    <button class="button">Enviar</button><br>
+                    <center>
+                        <a href="{{ route('user.create')}}">Não tenho login</a>
+                        <a href=""> / Esqueci meus dados</a>
+                    </center>
                 </div>
                 <center><a href={{route('user.usuarioCadastrado')}} class="link">Admin</a></center>
             </form>
         </section>
-</main>
+    </main>
+
+    <script>
+        function togglePassword(inputId, element) {
+            const input = document.getElementById(inputId);
+            if (input.type === "password") {
+                input.type = "text";
+                element.innerHTML = "🙈"; // Ícone para ocultar
+            } else {
+                input.type = "password";
+                element.innerHTML = "👀"; // Ícone para mostrar
+            }
+        }
+    </script>
 </body>
 </html>

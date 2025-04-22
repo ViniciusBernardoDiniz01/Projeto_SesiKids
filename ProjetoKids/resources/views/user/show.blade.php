@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/show.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Document</title>
 </head>
 <body>
@@ -19,7 +20,40 @@
     <form action="{{ route('user.destroy', ['user'=> $user->id ])}}" method="POST" style="margin: 0; padding: 0;">
         @csrf
         @method('DELETE')
-        <button type="submit" class="boston" onclick="return confirm('Tem certeza que deseja deletar usuario?')">Excluir</button>
+        <button type="submit" class="boston" id="exclui" onclick="">Excluir</button>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const deleteButton = document.querySelector('#exclui');
+        
+                if (deleteButton) {
+                    deleteButton.addEventListener('click', function(event) {
+                        event.preventDefault(); // Impede o envio padrão do formulário
+        
+                        Swal.fire({
+                            title: "Cuidado!",
+                            text: "Deseja realmente excluir este usuário? Esta ação não pode ser desfeita!",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Sim, excluir!",
+                            cancelButtonText: "Cancelar"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire({
+                                    title: "Excluído!",
+                                    text: "O usuário foi deletado com sucesso.",
+                                    icon: "success",
+                                    confirmButtonColor: "#3085d6",
+                                }).then(() => {
+                                    this.closest('form').submit(); // Envia o formulário após a confirmação
+                                });
+                            }
+                        });
+                    });
+                }
+            });
+        </script>
     </form>
     </div>
     <h1>Visualizar Usuário</h1>

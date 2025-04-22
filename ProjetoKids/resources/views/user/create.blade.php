@@ -43,13 +43,13 @@
                 <label for="password">Senha:</label>
                 <div class="mostrar">
                     <input type="password" class="input-senha" id="password" name="password" required>
-                    <span role="button" class="olho" onclick="togglePassword('password', this)">👁</span>
+                    <span role="button" class="olho" onclick="togglePassword('password', this)">👀</span>
                 </div>
 
                 <label for="password_confirmation">Confirmar Senha:</label>
                 <div class="mostrar">
                     <input type="password" class="input-senha" id="password_confirmation" name="password_confirmation" required>
-                    <span role="button" class="olho" onclick="togglePassword('password_confirmation', this)">👁</span>
+                    <span role="button" class="olho" onclick="togglePassword('password_confirmation', this)">👀</span>
                 </div>
                     <button type="submit" class="button">Enviar</button><br>
                     <center><a href="{{ route("user.login") }}">Já tenho login</a></center>
@@ -67,7 +67,7 @@
                 element.innerHTML = "🙈"; // Ícone para ocultar
             } else {
                 input.type = "password";
-                element.innerHTML = "👁"; // Ícone para mostrar
+                element.innerHTML = "👀"; // Ícone para mostrar
             }
         }
         </script>

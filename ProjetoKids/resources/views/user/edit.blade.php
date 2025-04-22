@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/edit.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Editar Usuário</title>
 </head>
 <body>
@@ -40,16 +41,49 @@
             <label for="password">Senha:</label>
                 <div class="mostrar">
                     <input type="password" class="input-senha" id="password" name="password">
-                    <span role="button" class="olho" onclick="togglePassword('password', this)">👁</span>
+                    <span role="button" class="olho" onclick="togglePassword('password', this)">👀</span>
                 </div>
             
             <label for="password_confirmation">Confirmar Senha:</label>
                 <div class="mostrar">
                     <input type="password" class="input-senha" id="password_confirmation" name="password_confirmation">
-                    <span role="button" class="olho" onclick="togglePassword('password_confirmation', this)">👁</span>
+                    <span role="button" class="olho" onclick="togglePassword('password_confirmation', this)">👀</span>
                 </div>
 
-            <button type="submit" class="button">Enviar</button><br>
+            <button type="submit" id="envia" class="button">Enviar</button><br>
+
+
+
+
+            <!-- filepath: c:\Users\3Dev\Documents\GitHub\Projeto_SesiKids\ProjetoKids\resources\views\user\edit.blade.php -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const submitButton = document.querySelector('#envia');
+
+        if (submitButton) {
+            submitButton.addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+
+                Swal.fire({
+                    title: "Deseja salvar as alterações?",
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: "Salvar",
+                    denyButtonText: "Não salvar",
+                    cancelButtonText: "Cancelar"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire("Salvo!", "As alterações foram salvas com sucesso.", "success").then(() => {
+                            this.closest('form').submit(); // Envia o formulário após a confirmação
+                        });
+                    } else if (result.isDenied) {
+                        Swal.fire("Alterações não salvas", "Nenhuma alteração foi feita.", "info");
+                    }
+                });
+            });
+        }
+    });
+</script>
             </div>
         </form>
     </section>
@@ -62,7 +96,7 @@
         element.innerHTML = "🙈"; // Ícone para ocultar
     } else {
         input.type = "password";
-        element.innerHTML = "👁"; // Ícone para mostrar
+        element.innerHTML = "👀"; // Ícone para mostrar
     }
 }
     </script>
