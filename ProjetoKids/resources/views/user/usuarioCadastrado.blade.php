@@ -33,7 +33,7 @@
         <form action="{{ route('user.destroy', ['user'=> $Sist->id ])}}" method="POST">
             @csrf
             @method('DELETE')
-            <button type="submit" class="boston" id="exclui" onclick="">Excluir</button>
+            <button type="submit" class="boston exclui" onclick="">Excluir</button>
         </form>
         </div>
         </div>
@@ -46,10 +46,10 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const deleteButton = document.querySelector('#exclui');
+        const deleteButtons = document.querySelectorAll('.exclui'); // Seleciona todos os botões com a classe "exclui"
 
-        if (deleteButton) {
-            deleteButton.addEventListener('click', function(event) {
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
                 event.preventDefault(); // Impede o envio padrão do formulário
 
                 Swal.fire({
@@ -74,7 +74,7 @@
                     }
                 });
             });
-        }
+        });
     });
 </script>
 </body>

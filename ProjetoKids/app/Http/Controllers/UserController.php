@@ -36,7 +36,7 @@ class UserController extends Controller
     $validatedData = $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:users,email,' . $user->id, // Ignora o e-mail atual do usuário
-        'password' => 'nullable|string|min:8|confirmed', // Senha é opcional
+        'password' => 'nullable|string|min:6|confirmed', // Senha é opcional
     ], [
         'email.unique' => 'Este email já está cadastrado.',
         'password.confirmed' => 'As senhas não conferem.',
@@ -61,7 +61,7 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:8|confirmed', // Validação para confirmar senha
+            'password' => 'required|string|min:6|confirmed', // Validação para confirmar senha
         ]);
     
         // Criação do usuário
