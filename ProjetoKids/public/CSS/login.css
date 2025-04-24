@@ -9,6 +9,7 @@ body{
     background-size: cover;
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 
@@ -81,8 +82,14 @@ form{
 }
 
 .input-email{
+    width: 100%; /* O input ocupa toda a largura do container */
+    padding-right: 40px; /* Espaço para o ícone do olho */
     border-radius: 15px;
     padding: 20px;
+    font-size: 16px;
+    border: solid 0.5px #cf37e6;
+    outline: none;
+    box-sizing: border-box;
 }
 
 
@@ -202,6 +209,27 @@ footer{
 
 .boston:hover{
     background-color: #6b3f9e;
+}
+
+.alert {
+    background-color: #f8d7da; /* Fundo vermelho claro */
+    color: #721c24; /* Texto vermelho escuro */
+    border: 1px solid #f5c6cb; /* Borda vermelha */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 15px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    font-size: 14px; /* Tamanho da fonte */
+    margin: 20px; /* Espaçamento em volta do alerta */
+}
+
+.alert ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /* Remove os marcadores da lista */
+}
+
+.alert li {
+    margin-bottom: 5px; /* Espaçamento entre os itens */
 }
 
 /* Responsividade para telas menores que 768px (tablets e celulares grandes) */

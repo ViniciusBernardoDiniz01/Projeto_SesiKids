@@ -71,7 +71,7 @@ class UserController extends Controller
             'password' => bcrypt($validatedData['password']),
         ]);
 
-        return redirect()->route('user.login')->with("success", "Usuario cadastrado");
+        return redirect()->route('login')->with("success", "Usuario cadastrado");
     }
 
     public function destroy(User $user){

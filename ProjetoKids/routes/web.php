@@ -1,18 +1,21 @@
 <?php
 
-use App\Http\Controllers\RegistradosController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 
-//registrados
+//login
 
-Route::get('/table-user', [RegistradosController::class, 'create'])->name('registrados.index');
+Route::get('/', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'loginProcess'])->name('login.process');
 
 
 
 //user
 
-Route::get('/', [UserController::class, 'index'])->name('user.index');
+Route::get('/start', [UserController::class, 'index'])->name('user.index');
 
 Route::get('/create-user', [UserController::class, 'create'])->name('user.create');
 

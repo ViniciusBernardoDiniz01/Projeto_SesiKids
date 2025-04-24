@@ -34,25 +34,31 @@
                 @endif
             <div class="formulario">
                 <label for="fname">Nome:</label><br>
-                <input type="text" class="input-email" id="Email" name="name" value="{{ old('name')}} "><br>
+                <input 
+                    placeholder="Digite seu Nome" 
+                    type="text" 
+                    class="input-email" 
+                    id="Email" 
+                    name="name" 
+                    value="{{ old('name') ?? '' }}"><br>
 
                 <label for="fname">Email:</label><br>
-                <input type="email" class="input-email" id="Email" name="email" value="{{ old('email')}}"><br>
+                <input placeholder="Digite seu E-mail" type="email" class="input-email" id="Email" name="email" value="{{ old('email')}}"><br>
             
 
                 <label for="password">Senha:</label>
                 <div class="mostrar">
-                    <input type="password" class="input-senha" id="password" name="password" required>
+                    <input placeholder="Digite sua Senha" type="password" class="input-senha" id="password" name="password" required>
                     <span role="button" class="olho" onclick="togglePassword('password', this)">👀</span>
                 </div>
 
                 <label for="password_confirmation">Confirmar Senha:</label>
                 <div class="mostrar">
-                    <input type="password" class="input-senha" id="password_confirmation" name="password_confirmation" required>
+                    <input placeholder="Confirme sua Senha" type="password" class="input-senha" id="password_confirmation" name="password_confirmation" required>
                     <span role="button" class="olho" onclick="togglePassword('password_confirmation', this)">👀</span>
                 </div>
                     <button type="submit" class="button">Enviar</button><br>
-                    <center><a href="{{ route("user.login") }}">Já tenho login</a></center>
+                    <center><a href="{{ route("login") }}">Já tenho login</a></center>
                 </div>
             </div>
             </form>

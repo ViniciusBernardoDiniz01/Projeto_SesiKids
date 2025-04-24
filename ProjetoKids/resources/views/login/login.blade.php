@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -14,17 +14,31 @@
     </header>
     <main>
         <section>
-            <form action="text">
+            <form action="{{ route('login.process') }}" method="POST">
+                @csrf
+                @method('POST')
+
                 <div class="login"><h2>Login</h2></div>
-                <div class="formulario">
-                    <label for="fname">Email:</label><br>
-                    <input type="text" class="input-email" id="Email" name="email"><br>
-                    
-                    <label for="lname">Senha:</label><br>
-                    <div class="mostrar">
-                        <input type="password" class="input-senha" id="Senha" name="password">
-                        <span role="button" class="olho" onclick="togglePassword('Senha', this)">👀</span>
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li style="color: red">{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
+                @endif
+
+                <div class="formulario">
+                    <label for="fname">Email:</label>
+                    <input placeholder="Digite seu E-mail" type="text" class="input-email" id="Email" name="email"><br>
+                    
+                    <label for="lname">Senha:</label>
+                    <div class="mostrar">
+                        <input placeholder="Digite sua Senha" type="password" class="input-senha" id="Senha" name="password">
+                        <span role="button" class="olho" onclick="togglePassword('Senha', this)">👀</span>
+                    </div><br>
                     
                     <button class="button">Enviar</button><br>
                     <center>
@@ -50,4 +64,4 @@
         }
     </script>
 </body>
-</html> --}}
+</html>

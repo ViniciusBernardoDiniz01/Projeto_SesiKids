@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <a href="{{ route("user.create")}}">
+        <a href="{{ route("login")}}">
             <button onclick="" class="botao">
                 <h2>Sou Professor</h2>
             </button>
