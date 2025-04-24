@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
     </header>
     <main>
         <section>
-            <form action=" {{route("user.store")}}" method="POST">
+            <form action=" {{route("login.storage")}}" method="POST">
                 @csrf
 
                 <div class="login"><h2>Cadastro!</h2></div>
@@ -78,4 +78,4 @@
         }
         </script>
 </body>
-</html> --}}
+</html>

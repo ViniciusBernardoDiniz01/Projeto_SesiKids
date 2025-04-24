@@ -10,8 +10,15 @@
 </head>
 <body>
     <header>
-        <a href="{{route('login')}}" class="link">Voltar</a>
-        <h1 class="h1-titulo">Bem-vindo à página Admin</h1>
+        <div class="header-left">
+            <a href="{{ route('logout') }}" class="link">Sair</a>
+        </div>
+        <div class="header-center">
+            <h1 class="h1-titulo">Título</h1>
+        </div>
+        <div class="header-right">
+            <span>Oi</span>
+        </div>
     </header>
     <div class="body">
     <footer>

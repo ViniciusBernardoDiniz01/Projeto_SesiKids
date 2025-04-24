@@ -4,26 +4,36 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Auth\Events\Login;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 //login
 
-Route::get('/', [LoginController::class, 'login'])->name('login');
+Route::get('/professor', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'loginProcess'])->name('login.process');
+Route::get('/create-user-login', [LoginController::class, 'create'])->name('login.create-user');
+Route::post('/storage-create', [LoginController::class, 'store'])->name('login.storage');
+
+//logout
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect()->route('login')->with('success', 'Logout realizado com sucesso!');
+})->name('logout');
+
+Route::get('/', [UserController::class, 'index'])->name('user.index');
+Route::get('/jogos-user', [UserController::class, 'jogos'])->name('user.jogos');
 
 
+Route::group(['middleware' => 'auth'], function () {
+    
 
 //user
 
-Route::get('/start', [UserController::class, 'index'])->name('user.index');
+// Route::get('/create-user', [UserController::class, 'create'])->name('user.create');
 
-Route::get('/create-user', [UserController::class, 'create'])->name('user.create');
+// Route::post('/store-user', [UserController::class, 'store'])->name('user.store');
 
-Route::post('/store-user', [UserController::class, 'store'])->name('user.store');
-
-Route::get('/jogos-user', [UserController::class, 'jogos'])->name('user.jogos');
-
-Route::get('/login-user', [UserController::class, 'usuarios'])->name('user.login');
+// Route::get('/login-user', [UserController::class, 'usuarios'])->name('user.login');
 
 Route::get('/cadastrados-user', [UserController::class, 'usuarioCadastrado'])->name('user.usuarioCadastrado');
 
@@ -36,3 +46,5 @@ Route::get('/edit-user/{user}', [UserController::class, 'edit'])->name('user.edi
 Route::put('/update-user/{user}', [UserController::class, 'update'])->name('user.update');
 //rota para deletar o usuário
 Route::delete('/destroy-user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+
+});

@@ -11,7 +11,7 @@
 <body>
     <div class="input">
     <div class="butoes">
-    <a href="{{ route('user.usuarioCadastrado') }}">
+    <a href="{{ route('login') }}">
     Voltar
     </a>
     

@@ -132,6 +132,27 @@ input[type="comfirm_password"] {
     color: #000;
 }
 
+.alert {
+    background-color: #f8d7da; /* Fundo vermelho claro */
+    color: #721c24; /* Texto vermelho escuro */
+    border: 1px solid #f5c6cb; /* Borda vermelha */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 15px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    font-size: 14px; /* Tamanho da fonte */
+    margin: 20px; /* Espaçamento em volta do alerta */
+}
+
+.alert ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /* Remove os marcadores da lista */
+}
+
+.alert li {
+    margin-bottom: 5px; /* Espaçamento entre os itens */
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     form {

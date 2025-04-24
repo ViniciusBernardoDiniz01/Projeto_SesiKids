@@ -31,7 +31,28 @@ class LoginController extends Controller
         $user = Auth::user();
         $user = User::find($user->id);
 
-        return redirect()->route('user.index')->with('success', 'Login realizado com sucesso!')->with('user', $user);
+        return redirect()->route('user.usuarioCadastrado')->with('success', 'Login realizado com sucesso!')->with('user', $user);
         
+    }
+
+    public function create(){
+        return view("login.create-user");
+    }
+
+    public function store(Request $request){ 
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:6|confirmed', // Validação para confirmar senha
+        ]);
+    
+        // Criação do usuário
+        User::create([
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'password' => bcrypt($validatedData['password']),
+        ]);
+
+        return redirect()->route('login')->with("success", "Usuario cadastrado");
     }
 }

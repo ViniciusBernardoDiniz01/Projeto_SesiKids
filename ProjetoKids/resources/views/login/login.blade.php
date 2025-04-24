@@ -9,7 +9,7 @@
 <body>
     
     <header>
-        <a href="{{ route('user.create') }}" class="link-2">Voltar</a>
+        <a href="{{ route('login.create-user') }}" class="link-2">Voltar</a>
         <h1 class="h1-titulo">Bem-vindo à nossa página de login para Professores</h1>
     </header>
     <main>
@@ -42,7 +42,7 @@
                     
                     <button class="button">Enviar</button><br>
                     <center>
-                        <a href="{{ route('user.create')}}">Não tenho login</a>
+                        <a href="{{ route('login.create-user')}}">Não tenho login</a>
                         <a href=""> / Esqueci meus dados</a>
                     </center>
                 </div>
