@@ -7,13 +7,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Contracts\Auditable;
+use OwenIt\Auditing\Auditable as AuditingTable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements Auditable
 {
     protected $table = 'users'; // Certifique-se de que o nome da tabela está correto
     
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, SoftDeletes;
+    use HasFactory, Notifiable, SoftDeletes , AuditingTable;
 
     /**
      * The attributes that are mass assignable.
