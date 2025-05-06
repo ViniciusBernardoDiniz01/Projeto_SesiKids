@@ -45,12 +45,25 @@ class LoginController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:6|confirmed', // Validação para confirmar senha
         ]);
+
+        $imageName = null;
+
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+        $requestImage = $request->file('image');
+
+        $extension = $requestImage->extension();
+
+        $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+        $requestImage->move(public_path('IMG/'), $imageName);
+        }
     
         // Criação do usuário
         User::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => bcrypt($validatedData['password']),
+            'image' => $imageName,
         ]);
 
         return redirect()->route('login')->with("success", "Usuario cadastrado");

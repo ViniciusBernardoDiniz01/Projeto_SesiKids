@@ -14,7 +14,7 @@
     </a>
     <a href="{{ route('user.show', ['user'=> $user->id ])}}" class="boston">Visualizar</a><br>
     <section>
-        <form action=" {{route('user.update', ['user' => $user->id])}}" method="POST">
+        <form action=" {{route('user.update', ['user' => $user->id])}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -49,6 +49,9 @@
                     <input type="password" class="input-senha" id="password_confirmation" name="password_confirmation">
                     <span role="button" class="olho" onclick="togglePassword('password_confirmation', this)">👀</span>
                 </div>
+
+            <label for="image">Imagem:</label>
+            <input type="file" name="image" id="image" class="input-image"><br>
 
             <button type="submit" id="envia" class="button">Enviar</button><br>
 

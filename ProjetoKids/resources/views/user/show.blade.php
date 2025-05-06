@@ -11,7 +11,7 @@
 <body>
     <div class="input">
     <div class="butoes">
-    <a href="{{ route('login') }}">
+    <a href="{{ route('user.usuarioCadastrado') }}">
     Voltar
     </a>
     
@@ -63,6 +63,14 @@
             {{ session("sucess") }}
         </p>
     @endif
+
+    @if ($user->image)
+        <img src="{{ asset('img/' . $user->image) }}" alt="Foto de perfil" class="img-thumbnail" style="width: 200px; height: 200px; border-radius: 100%;">
+    @else
+        <span class="text-muted"></span>
+    @endif
+
+    <br>
 
     ID: {{ $user->id }}<br>
     Nome: {{ $user->name }}<br>

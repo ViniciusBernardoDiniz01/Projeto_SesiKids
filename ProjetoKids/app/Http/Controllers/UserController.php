@@ -42,11 +42,24 @@ class UserController extends Controller
         'password.confirmed' => 'As senhas não conferem.',
     ]);
 
+    $imageName = $user->image; // Mantém a imagem atual
+
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+        $requestImage = $request->file('image');
+
+        $extension = $requestImage->extension();
+
+        $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+        $requestImage->move(public_path('IMG/'), $imageName);
+        }
+
     // Atualização dos dados do usuário
     $user->update([
         'name' => $validatedData['name'],
         'email' => $validatedData['email'],
         'password' => $validatedData['password'] ? bcrypt($validatedData['password']) : $user->password,
+        'image' => $imageName,
     ]);
 
     return redirect()->route('user.show', $user->id)->with('success', 'Usuário atualizado com sucesso!');

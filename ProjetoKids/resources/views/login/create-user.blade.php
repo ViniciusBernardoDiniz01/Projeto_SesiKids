@@ -17,8 +17,9 @@
     </header>
     <main>
         <section>
-            <form action=" {{route("login.storage")}}" method="POST">
+            <form action=" {{route("login.storage")}}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('POST')
 
                 <div class="login"><h2>Cadastro!</h2></div>
                 <div class="formulario">
@@ -57,6 +58,9 @@
                     <input placeholder="Confirme sua Senha" type="password" class="input-senha" id="password_confirmation" name="password_confirmation" required>
                     <span role="button" class="olho" onclick="togglePassword('password_confirmation', this)">👀</span>
                 </div>
+                    <label for="image">Imagem:</label>
+                    <input type="file" name="image" id="image" class="input-image"><br>
+                    
                     <button type="submit" class="button">Enviar</button><br>
                     <center><a href="{{ route("login") }}">Já tenho login</a></center>
                 </div>
