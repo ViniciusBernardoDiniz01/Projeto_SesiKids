@@ -14,12 +14,41 @@
             <a href="{{ route('logout') }}" class="link">Sair</a>
         </div>
         <div class="header-center">
-            <h1 class="h1-titulo">Título</h1>
+            <h1 class="h1-titulo">Bem Vindo a paina admin</h1>
         </div>
-        <div class="header-right">
-            <span>Oi</span>
+        <div class="header-right" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="img">
+                <img src="{{ Auth::user()->image ? asset('img/' . Auth::user()->image) : asset('img/icone_sem_foto.jpg') }}" alt="Foto de perfil" style="width: 50px; height: 50px; border-radius: 100%;">
+            </div>
         </div>
     </header>
+
+    <div class="pesquisa">
+        <div class="listaDeUsers">
+            <span><h1>Pesquisar</h1></span>
+        </div>
+
+        <div class="inputs">
+            <form action="{{route('user.usuarioCadastrado')}}">
+
+            <div class="campos">
+                <div class="nome">
+                    <label for="name" class="nome-title">Nome:</label>
+                    <input type="text" name="name" id="name" class="nome" value="{{ request('name') }}" placeholder="Digite o nome">
+                </div><br>
+
+                <div class="email">
+                    <label for="email" class="email-title">Email:</label>
+                    <input type="text" name="email" id="email" class="email" value="{{ request('email') }}" placeholder="Digite o email">
+                </div><br>
+                <div class="pesquisar-button">
+                    <button type="submit" class="btn-pesquisa">Pesquisar</button>
+                    <a href="{{route('user.usuarioCadastrado')}}" class="btn-limpar">Limpar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="body">
     <footer>
         @if (session("sucess"))
@@ -34,6 +63,15 @@
         <span>Nome: {{ $Sist->name }}<br></span>
         <span>E-mail: {{ $Sist->email }}<br></span>
         </div>
+
+        <div class="img">
+            @if (isset($Sist->image))
+                <img src="{{ asset('IMG/' . $Sist->image) }}" alt="Foto de perfil" class="img-thumbnail" style="width: 50px; height: 50px; border-radius: 100%;">
+            @else
+                <img src="{{ asset('IMG/icone_sem_foto.jpg') }}" alt="" class="img-thumbnail" style="width: 50px; height: 50px; border-radius: 100%;">
+            @endif
+        </div>
+
         <div class="botaos">
         <a href="{{ route('user.show', ['user'=> $Sist->id ])}}" id="boston-1" class="boston">Visualizar</a>
         <a href="{{ route('user.edit', ['user'=> $Sist->id ])}}" id="boston-2" class="boston">Editar</a>

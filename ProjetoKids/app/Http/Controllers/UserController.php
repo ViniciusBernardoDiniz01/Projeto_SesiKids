@@ -19,9 +19,23 @@ class UserController extends Controller
         return view("user.show", ['user' => $user]);
     }
 
-    public function usuarioCadastrado(){
-        $users = User::all(); // Obter todos os usuários
+    public function usuarioCadastrado(request $request){
+
+        //verifica e seleciona os usuarios procurados
+
+        $users = User::when($request->has('name'), function($whenQuery) use ($request){
+            $whenQuery->where('name', 'like', "%" . $request->name . "%");
+        })
+        ->when($request->has('email'), function($whenQuery) use ($request){
+            $whenQuery->where('email', 'like', "%". $request->email ."%");
+        })
+        ->orderByDesc('id')
+        ->paginate(null)
+        ->withQueryString();
+        // $users = User::all(); // Obter todos os usuários
         return view("user.usuarioCadastrado", ['users' => $users]);
+
+        
     }
 
     public function edit(User $user){

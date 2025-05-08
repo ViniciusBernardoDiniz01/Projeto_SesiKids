@@ -67,7 +67,7 @@
     @if ($user->image)
         <img src="{{ asset('img/' . $user->image) }}" alt="Foto de perfil" class="img-thumbnail" style="width: 200px; height: 200px; border-radius: 100%;">
     @else
-        <span class="text-muted"></span>
+        <img src="{{ asset('IMG/icone_sem_foto.jpg') }}" alt="s" class="img-thumbnail" style="width: 200px; height: 200px; border-radius: 100%;">
     @endif
 
     <br>
