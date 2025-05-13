@@ -30,6 +30,7 @@ class User extends Authenticatable implements Auditable
         'image',
     ];
 
+
     /**
      * The attributes that should be hidden for serialization.
      *

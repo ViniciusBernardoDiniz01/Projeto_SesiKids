@@ -32,6 +32,7 @@
                 <div class="links">
                     <a href="{{route('login.create-user')}}" class="Cadastrar">Cadastrar</a>
                     <a href="{{route('user.generate-pdf')}}" class="CriaPdf">Criar Pdf</a>
+                    <a href="{{route('user.comentario-pdf')}}" class="CriaPdf">Pdf Jogos</a>
                 </div>
                 </span><hr>
         

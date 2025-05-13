@@ -119,5 +119,12 @@ class UserController extends Controller
         $pdf = PDF::loadView('user.generate-pdf', ['users' => $users])->setPaper('a4', 'portrait');
         return $pdf->download('usuarios.pdf');
     }
+
+public function comentarioPDF()
+{
+    $users = User::orderBy('id')->get(); // Busca todos os usuários
+    $pdf = PDF::loadView('user.comentario-pdf', ['users' => $users])->setPaper('a4', 'portrait');
+    return $pdf->download('comentarios-geral.pdf');
+}
 }
 

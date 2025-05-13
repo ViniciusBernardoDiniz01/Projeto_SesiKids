@@ -42,4 +42,6 @@ Route::delete('/destroy-user/{user}', [UserController::class, 'destroy'])->name(
 
 Route::get('/generate-pdf-user', [UserController::class, 'generatePDF'])->name('user.generate-pdf');
 
+Route::get('/generate-pdf-comentario', [UserController::class, 'comentarioPDF'])->name('user.comentario-pdf');
+
 });
