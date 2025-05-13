@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class UserController extends Controller
 {
@@ -110,6 +111,13 @@ class UserController extends Controller
         $users = User::orderByDesc('id')->get();
 
         return view('user.index', ['users' => $users]);
+    }
+
+    public function generatePdf()
+    {
+        $users = User::orderBy('id')->get();
+        $pdf = PDF::loadView('user.generate-pdf', ['users' => $users])->setPaper('a4', 'portrait');
+        return $pdf->download('usuarios.pdf');
     }
 }
 

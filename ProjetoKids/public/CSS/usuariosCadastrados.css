@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: content-box;
     font-family: Arial, sans-serif;
+    text-decoration: none;
 }
 
 /* Estilo do cabeçalho */
@@ -107,7 +108,7 @@ footer {
     align-items: center; /* Alinha verticalmente */
     margin: 15px;
     padding: 10px;
-    width: 100%; /* Garante que ocupe toda a largura disponível */
+    width: 100%; 
     text-align: left; /* Alinha o texto à esquerda */
     gap: 10px; /* Espaçamento entre os itens */
 }
@@ -165,6 +166,8 @@ hr {
     cursor: pointer;
 }
 
+
+
 .boston:hover {
     background: #5e35b1; /* Roxo mais escuro */
 }
@@ -176,4 +179,145 @@ button.boston {
 
 button.boston:hover {
     background: #a71d2a; /* Vermelho escuro */
+}
+
+/* Estilização da seção de pesquisa */
+.pesquisa {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f3e5f5; /* Roxo claro */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 43.5%;
+    text-align: center;
+}
+
+.pesquisa h1 {
+    color: #6a0dad; /* Roxo escuro */
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.inputs input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.inputs input:focus {
+    border-color: #6a0dad; /* Roxo escuro */
+}
+
+/* Botões de pesquisa e limpar */
+.pesquisar-button {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-pesquisa,
+.btn-limpar {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-pesquisa {
+    background-color: #6a0dad; /* Roxo escuro */
+    color: white;
+}
+
+.btn-pesquisa:hover {
+    background-color: #5e35b1; /* Roxo mais escuro */
+    transform: scale(1.05);
+}
+
+.btn-limpar {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+}
+
+.btn-limpar:hover {
+    background-color: #a71d2a; /* Vermelho escuro */
+    transform: scale(1.05);
+}
+
+hr {
+    border: none;
+    height: 4px;
+    background:#9575cd; /*roxo claro; */
+    margin: 20px 0;
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+.listaDeUsers{
+    margin-top: 10px;
+}
+
+/* Contêiner dos botões com fundo preenchendo todo o bloco */
+.botoes{
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões ao canto direito */
+    gap: 10px; /* Espaçamento entre os botões */
+    padding: 10px; /* Espaçamento interno do bloco */
+    background-color: #cfb3f9; /* Cor de fundo */
+    border-radius: 5px; /* Bordas arredondadas (opcional) */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque (opcional) */
+}
+
+.botoes{
+    display: flex;
+    justify-content: space-between; /* Espaço entre os elementos */
+    align-items: center; /* Alinha verticalmente */
+    flex-direction: row; /* Coloca os itens na mesma linha */
+    margin: 10px;
+
+}
+/* Botões de Cadastrar e Gerar PDF */
+.Cadastrar,
+.CriaPdf {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.Cadastrar {
+    background-color: #5e35b1;
+}
+
+.Cadastrar:hover {
+    background-color: #4e2a91; /* Roxo mais escuro */
+    transform: scale(1.05);
+}
+
+.CriaPdf {
+    background-color: orange ; 
+}
+
+.CriaPdf:hover {
+    background-color: #ff8c00;
+    transform: scale(1.05);
 }

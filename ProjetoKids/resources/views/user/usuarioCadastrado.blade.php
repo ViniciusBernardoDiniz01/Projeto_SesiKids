@@ -23,10 +23,18 @@
         </div>
     </header>
 
+
     <div class="pesquisa">
-        <div class="listaDeUsers">
-            <span><h1>Pesquisar</h1></span>
-        </div>
+                <span class="botoes">
+                    <div class="listaDeUsers">
+                    <span><h1>Pesquisar</h1></span>
+                    </div>
+                <div class="links">
+                    <a href="{{route('login.create-user')}}" class="Cadastrar">Cadastrar</a>
+                    <a href="{{route('user.generate-pdf')}}" class="CriaPdf">Criar Pdf</a>
+                </div>
+                </span><hr>
+        
 
         <div class="inputs">
             <form action="{{route('user.usuarioCadastrado')}}">

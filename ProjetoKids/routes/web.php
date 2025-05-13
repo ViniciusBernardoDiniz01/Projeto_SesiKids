@@ -24,16 +24,9 @@ Route::get('/', [UserController::class, 'index'])->name('user.index');
 Route::get('/jogos-user', [UserController::class, 'jogos'])->name('user.jogos');
 
 
+
 Route::group(['middleware' => 'auth'], function () {
-    
 
-//user
-
-// Route::get('/create-user', [UserController::class, 'create'])->name('user.create');
-
-// Route::post('/store-user', [UserController::class, 'store'])->name('user.store');
-
-// Route::get('/login-user', [UserController::class, 'usuarios'])->name('user.login');
 
 Route::get('/cadastrados-user', [UserController::class, 'usuarioCadastrado'])->name('user.usuarioCadastrado');
 
@@ -46,5 +39,7 @@ Route::get('/edit-user/{user}', [UserController::class, 'edit'])->name('user.edi
 Route::put('/update-user/{user}', [UserController::class, 'update'])->name('user.update');
 //rota para deletar o usuário
 Route::delete('/destroy-user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+
+Route::get('/generate-pdf-user', [UserController::class, 'generatePDF'])->name('user.generate-pdf');
 
 });
