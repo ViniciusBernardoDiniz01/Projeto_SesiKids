@@ -45,7 +45,6 @@
             <p>ID: {{ $user->id }}</p>
             <p>Email: {{ $user->email }}</p>
             <p>Cadastrado em: {{ \Carbon\Carbon::parse($user->created_at)->format('d/m/y H:i:s') }}</p>
-            <p>Atualizado em: {{ \Carbon\Carbon::parse($user->updated_at)->format('d/m/y H:i:s') }}</p>
         </div>
     @endforeach
 </body>

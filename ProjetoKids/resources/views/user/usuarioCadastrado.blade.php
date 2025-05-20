@@ -32,7 +32,7 @@
                 <div class="links">
                     <a href="{{route('login.create-user')}}" class="Cadastrar">Cadastrar</a>
                     <a href="{{route('user.generate-pdf')}}" class="CriaPdf">Criar Pdf</a>
-                    <a href="{{route('user.comentario-pdf')}}" class="CriaPdf">Pdf Jogos</a>
+                    <a href="{{route('user.comentario-pdf')}}" class="CriaPdf">Pdf Comentarios</a>
                 </div>
                 </span><hr>
         
@@ -49,9 +49,11 @@
                 <div class="email">
                     <label for="email" class="email-title">Email:</label>
                     <input type="text" name="email" id="email" class="email" value="{{ request('email') }}" placeholder="Digite o email">
-                </div><br>
+                </div>
                 <div class="pesquisar-button">
                     <button type="submit" class="btn-pesquisa">Pesquisar</button>
+                    <a href="{{url('generate-pdf-user?' . request()->getQueryString())}}" class="btn-pesquisa">Pdf Pesquisa</a>
+                    <a href="{{url('generate-pdf-comentario?' . request()->getQueryString())}}" class="btn-pesquisa">Pdf Users</a>
                     <a href="{{route('user.usuarioCadastrado')}}" class="btn-limpar">Limpar</a>
                 </div>
             </div>

@@ -6,6 +6,7 @@ use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
 
 class UserController extends Controller
 {
@@ -113,18 +114,77 @@ class UserController extends Controller
         return view('user.index', ['users' => $users]);
     }
 
-    public function generatePdf()
+    public function generatePdf(Request $request)
     {
-        $users = User::orderBy('id')->get();
+        $users = User::when($request->has('name'), function ($whenQuery) use ($request){
+            $whenQuery->where('name', 'like', '%' . $request->name . '%');
+        })
+            ->when($request->has('email'), function ($whenQuery) use ($request){
+                $whenQuery->where('email', 'like', '%' . $request->email . '%');
+            })
+            ->when($request->filled('start_date_registration'), function ($whenQuery) use ($request){
+                $whenQuery->where('create_at', '>=', \Carbon\Carbon::parse($request->start_date_registration)->format('Y-m-d H:i:s'));
+            })
+            ->when($request->filled('end_date_registration'), function ($whenQuery) use ($request){
+                $whenQuery->where('create_at', '<=', \Carbon\Carbon::parse($request->end_date_registration)->format('Y-m-d H:i:s'));
+            })
+            ->orderBy('created_at')
+            ->get();
+
+        $totalRecords = $users->count('id');
+
+        $numberRecordsAllowed = 500;
+
+        if($totalRecords > $numberRecordsAllowed){
+            return redirect()->route('user.usuarioCadastrado', [
+                'name' => $request->name,
+                'email' => $request->email,
+                'start_date_registration' => $request->start_date_registration,
+                'end_date_registration' => $request->end_date_registration
+            ])->with('error', "Limite de Registros ultrapassados para gerar um pdf. O limite é de $numberRecordsAllowed registros!");
+        }
+
         $pdf = PDF::loadView('user.generate-pdf', ['users' => $users])->setPaper('a4', 'portrait');
-        return $pdf->download('usuarios.pdf');
+
+        return $pdf->download('Pesquisa_users.pdf');
     }
 
-public function comentarioPDF()
+public function comentarioPDF(Request $request)
 {
-    $users = User::orderBy('id')->get(); // Busca todos os usuários
-    $pdf = PDF::loadView('user.comentario-pdf', ['users' => $users])->setPaper('a4', 'portrait');
-    return $pdf->download('comentarios-geral.pdf');
+    $users = User::when($request->has('name'), function ($whenQuery) use ($request){
+            $whenQuery->where('name', 'like', '%' . $request->name . '%');
+        })
+            ->when($request->has('email'), function ($whenQuery) use ($request){
+                $whenQuery->where('email', 'like', '%' . $request->email . '%');
+            })
+            ->when($request->filled('start_date_registration'), function ($whenQuery) use ($request){
+                $whenQuery->where('create_at', '>=', \Carbon\Carbon::parse($request->start_date_registration)->format('Y-m-d H:i:s'));
+            })
+            ->when($request->filled('end_date_registration'), function ($whenQuery) use ($request){
+                $whenQuery->where('create_at', '<=', \Carbon\Carbon::parse($request->end_date_registration)->format('Y-m-d H:i:s'));
+            })
+            ->orderBy('id')
+            ->get();
+
+        $totalRecords = $users->count('id');
+
+        $numberRecordsAllowed = 500;
+
+        if($totalRecords > $numberRecordsAllowed){
+            return redirect()->route('user.usuarioCadastrado', [
+                'name' => $request->name,
+                'email' => $request->email,
+                'start_date_registration' => $request->start_date_registration,
+                'end_date_registration' => $request->end_date_registration
+            ])->with('error', "Limite de Registros ultrapassados para gerar um pdf. O limite é de $numberRecordsAllowed registros!");
+        }
+
+        $pdf = PDF::loadView('user.comentario-pdf', ['users' => $users])->setPaper('a4', 'portrait');
+
+        return $pdf->download('Pesquisa_users_cards.pdf');
+    // $users = User::orderBy('id')->get(); // Busca todos os usuários
+    // $pdf = PDF::loadView('user.comentario-pdf', ['users' => $users])->setPaper('a4', 'portrait');
+    // return $pdf->download('comentarios-geral.pdf');
 }
 }
 
