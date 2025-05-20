@@ -28,17 +28,19 @@ Route::get('/jogos-user', [UserController::class, 'jogos'])->name('user.jogos');
 Route::group(['middleware' => 'auth'], function () {
 
 
-Route::get('/cadastrados-user', [UserController::class, 'usuarioCadastrado'])->name('user.usuarioCadastrado');
+Route::get('/cadastrados-user', [UserController::class, 'usuarioCadastrado'])->name('user.usuarioCadastrado')->middleware('permission:cadastrados-user');
 
 // esta rota é para mostrar o usuário
-Route::get('/show-user/{user}', [UserController::class, 'show'])->name('user.show');
+Route::get('/show-user/{user}', [UserController::class, 'show'])->name('user.show')->middleware('permission:show-user');
 
 // esta rota é para editar o usuário
-Route::get('/edit-user/{user}', [UserController::class, 'edit'])->name('user.edit');
+Route::get('/edit-user/{user}', [UserController::class, 'edit'])->name('user.edit')->middleware('permission:edit-user');
+
 // esta rota é para atualizar o usuário
 Route::put('/update-user/{user}', [UserController::class, 'update'])->name('user.update');
+
 //rota para deletar o usuário
-Route::delete('/destroy-user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+Route::delete('/destroy-user/{user}', [UserController::class, 'destroy'])->name('user.destroy')->middleware('permission:destroy-user');
 
 Route::get('/generate-pdf-user', [UserController::class, 'generatePDF'])->name('user.generate-pdf');
 

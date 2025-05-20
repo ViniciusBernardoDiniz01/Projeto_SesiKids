@@ -7,6 +7,7 @@ use App\Http\Requests\LoginRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Permission;
 
 class LoginController extends Controller
 {
@@ -30,6 +31,13 @@ class LoginController extends Controller
 
         $user = Auth::user();
         $user = User::find($user->id);
+
+        if($user->hasRole('admin')){
+            $permissions = Permission::pluck('name')->toArray();
+        }else{
+            $permissions = $user->getAllPermissions()->pluck('name')->toArray();
+        }
+        $user->syncPermissions($permissions);
 
         return redirect()->route('user.usuarioCadastrado')->with('success', 'Login realizado com sucesso!')->with('user', $user);
         
