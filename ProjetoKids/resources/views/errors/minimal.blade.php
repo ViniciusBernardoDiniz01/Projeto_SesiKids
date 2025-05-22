@@ -71,6 +71,9 @@
                 <div class="error-code">
                     @yield('code')
                 </div>
+                <div class="image">
+                    @yield('image')
+                </div>
                 <div class="message">
                     @yield('message')
                 </div>

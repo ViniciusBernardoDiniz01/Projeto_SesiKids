@@ -7,6 +7,11 @@ use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
+Route::get('/erro401', function () {
+    abort(401);
+});
+
 //login
 
 Route::get('/professor', [LoginController::class, 'login'])->name('login');
