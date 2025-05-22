@@ -39,7 +39,7 @@ class LoginController extends Controller
         }
         $user->syncPermissions($permissions);
 
-        return redirect()->route('user.usuarioCadastrado')->with('success', 'Login realizado com sucesso!')->with('user', $user);
+        return redirect()->route('dashboard.index')->with('success', 'Login realizado com sucesso!')->with('user', $user);
         
     }
 

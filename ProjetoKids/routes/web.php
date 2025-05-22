@@ -27,6 +27,8 @@ Route::get('/jogos-user', [UserController::class, 'jogos'])->name('user.jogos');
 
 Route::group(['middleware' => 'auth'], function () {
 
+Route::get('/painel', [UserController::class, 'painel'])->name('dashboard.index');
+
 
 Route::get('/cadastrados-user', [UserController::class, 'usuarioCadastrado'])->name('user.usuarioCadastrado')->middleware('permission:cadastrados-user');
 
@@ -37,7 +39,7 @@ Route::get('/show-user/{user}', [UserController::class, 'show'])->name('user.sho
 Route::get('/edit-user/{user}', [UserController::class, 'edit'])->name('user.edit')->middleware('permission:edit-user');
 
 // esta rota é para atualizar o usuário
-Route::put('/update-user/{user}', [UserController::class, 'update'])->name('user.update');
+Route::put('/update-user/{user}', [UserController::class, 'update'])->name('user.update')->middleware('permission:edit-user');
 
 //rota para deletar o usuário
 Route::delete('/destroy-user/{user}', [UserController::class, 'destroy'])->name('user.destroy')->middleware('permission:destroy-user');

@@ -36,8 +36,7 @@ class RoleSeeder extends Seeder
             ]);
 
             $professor->givePermissionTo([
-                'cadastrados-user',
-                'create-user-login',
+                
             ]);
         }
     }

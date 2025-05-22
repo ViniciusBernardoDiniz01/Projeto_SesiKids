@@ -21,6 +21,10 @@ class UserController extends Controller
         return view("user.show", ['user' => $user]);
     }
 
+    public function painel(){
+        return view("dashboard.index");
+    }
+
     public function usuarioCadastrado(request $request){
 
         //verifica e seleciona os usuarios procurados

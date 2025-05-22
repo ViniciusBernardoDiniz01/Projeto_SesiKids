@@ -14,7 +14,10 @@
             <a href="{{ route('logout') }}" class="link">Sair</a>
         </div>
         <div class="header-center">
-            <h1 class="h1-titulo">Bem Vindo a paina admin</h1>
+            <a href="painel" class="painel">Dashboard</a>
+                @can('create-user-login')
+                    <a href="{{ route('user.usuarioCadastrado') }}" class="painel">Usuários</a>
+                @endcan
         </div>
         <div class="header-right" style="display: flex; flex-direction: column; align-items: center;">
             <div class="img">
