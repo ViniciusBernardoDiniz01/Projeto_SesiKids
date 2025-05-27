@@ -49,6 +49,34 @@
                     <input type="password" class="input-senha" id="password_confirmation" name="password_confirmation">
                     <span role="button" class="olho" onclick="togglePassword('password_confirmation', this)">👀</span>
                 </div>
+            
+            {{-- <label for="role">Função:</label><br>
+            <select name="role" id="role" class="input-role">
+                <option value="user" {{ $user->role === 'professor' ? 'selected' : '' }}>Professor</option>
+                <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>Administrador</option>
+            </select><br><br> --}}
+
+            <div class="função_div">
+                <label class="perfil" for="Perfil">Perfil:</label>
+                <select name="roles" class="form-class" id="roles">
+                    <option value="" disabled {{ old('roles', $userRoles ?? 'professor') == '' ? 'selected' : '' }}>Selecione</option>
+                    @forelse($roles as $role)
+                        @if($role != 'admin')
+                            <option value="{{ $role }}" {{ old('roles', $userRoles ?? 'professor') == $role ? 'selected' : '' }}>
+                                {{ $role }}
+                            </option>
+                        @else
+                            @if(Auth::user()->hasRole('admin'))
+                                <option value="{{ $role }}" {{ old('roles', $userRoles ?? 'professor') == $role ? 'selected' : '' }}>
+                                    {{ $role }}
+                                </option>
+                            @endif
+                        @endif
+                    @empty
+                        <option value="" disabled>Nenhum papel encontrado</option>
+                    @endforelse
+                    </select><br><br>
+                </div>
 
             <label for="image">Imagem:</label>
             <input type="file" name="image" id="image" class="input-image"><br>

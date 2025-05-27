@@ -14,7 +14,7 @@
             <a href="{{ route('logout') }}" class="link">Sair</a>
         </div>
         <div class="header-center">
-            <a href="painel" class="painel">Dashboard</a>
+            <a href="painel" class="painel">Criar Jogos</a>
                 @can('create-user-login')
                     <a href="{{ route('user.usuarioCadastrado') }}" class="painel">Usuários</a>
                 @endcan
@@ -76,7 +76,18 @@
         <span>ID: {{ $Sist->id }}<br></span>
         <span>Nome: {{ $Sist->name }}<br></span>
         <span>E-mail: {{ $Sist->email }}<br></span>
+        <span class="perfil" style="display: inline-block;">
+                Perfil:
+                <span class="classe_perfil" style="display: inline-block; margin-left: 6px;">
+                    @forelse($Sist->getRoleNames() as $role)
+                        <span class="badge badge-primary" style="margin-right: 4px;">{{ $role }}</span>
+                    @empty
+                    @endForelse
+                </span>
+            </span>
         </div>
+
+
 
         <div class="img">
             @if (isset($Sist->image))

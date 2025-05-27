@@ -44,8 +44,12 @@ class UserController extends Controller
         
     }
 
-    public function edit(User $user){
-        return view("user.edit", ['user' => $user]);
+    public function edit($id){
+            $user = User::findOrFail($id);
+            $roles = \Spatie\Permission\Models\Role::pluck('name'); // Busca todos os nomes dos papéis
+            $userRoles = $user->getRoleNames()->first(); // Pega o papel atual do usuário
+
+    return view('user.edit', compact('user', 'roles', 'userRoles'));
     }
 
     public function update(Request $request, $id)
@@ -73,6 +77,12 @@ class UserController extends Controller
 
         $requestImage->move(public_path('IMG/'), $imageName);
         }
+    
+    if ($request->has('roles')) {
+        $user->syncRoles($request->input('roles')); // Sincroniza os papéis selecionados
+    } else {
+        $user->syncRoles([]); // Remove todos os papéis se nenhum for selecionado
+    }
 
     // Atualização dos dados do usuário
     $user->update([

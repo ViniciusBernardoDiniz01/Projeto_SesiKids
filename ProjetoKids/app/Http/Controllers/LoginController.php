@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class LoginController extends Controller
 {
@@ -44,7 +45,8 @@ class LoginController extends Controller
     }
 
     public function create(){
-        return view("login.create-user");
+        $roles = Role::pluck('name')->all();
+        return view("login.create-user", ['menu'=>'users','roles'=>$roles]);
     }
 
     public function store(Request $request){ 
@@ -67,12 +69,14 @@ class LoginController extends Controller
         }
     
         // Criação do usuário
-        User::create([
+        $user = User::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => bcrypt($validatedData['password']),
             'image' => $imageName,
         ]);
+
+        $user->assignRole('professor'); // Atribuindo a role 'admin' ao usuário
 
         return redirect()->route('login')->with("success", "Usuario cadastrado");
     }

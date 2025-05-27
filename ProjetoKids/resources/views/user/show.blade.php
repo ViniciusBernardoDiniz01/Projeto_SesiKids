@@ -75,6 +75,15 @@
     ID: {{ $user->id }}<br>
     Nome: {{ $user->name }}<br>
     E-mail: {{ $user->email }}<br>
+    <span class="perfil" style="display: inline-block;">
+                Perfil:
+                <span class="classe_perfil" style="display: inline-block; margin-left: 6px;">
+                    @forelse($user->getRoleNames() as $role)
+                        <span class="badge badge-primary" style="margin-right: 4px;">{{ $role }}</span>
+                    @empty
+                    @endForelse
+                </span>
+            </span><br>
     
     Cadastrado em: {{\Carbon\Carbon::parse($user->created_at)->format('d/m/y H:i:s') }}<br>
     Atualizado em: {{\Carbon\Carbon::parse($user->updated_at)->format('d/m/y H:i:s') }}<br>
