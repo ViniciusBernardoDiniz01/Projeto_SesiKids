@@ -9,15 +9,23 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/erro401', function () {
-    abort(500);
+    abort(401);
 });
 
 Route::get('/erro503', function () {
-    abort(403);
+    abort(503);
 });
 
 Route::get('/erro429', function () {
     abort(429);
+});
+
+Route::get('/erro404', function () {
+    abort(404);
+});
+
+Route::get('/erro500', function () {
+    abort(500);
 });
 
 //login
