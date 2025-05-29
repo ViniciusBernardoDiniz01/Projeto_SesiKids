@@ -106,11 +106,12 @@
         <div class="botaos">
         <a href="{{ route('user.show', ['user'=> $Sist->id ])}}" id="boston-1" class="boston">Visualizar</a>
         <a href="{{ route('user.edit', ['user'=> $Sist->id ])}}" id="boston-2" class="boston">Editar</a>
-        <form action="{{ route('user.destroy', ['user'=> $Sist->id ])}}" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="boston exclui" onclick="">Excluir</button>
+        <form action="{{ route('user.destroy', ['user'=> $Sist->id ])}}" method="POST" style="margin: 0; padding: 0;">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="boston exclui">Excluir</button>
         </form>
+        
         </div>
         </div>
         <hr>
@@ -118,6 +119,33 @@
         @endforelse
     </footer>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const deleteButtons = document.querySelectorAll('.exclui');
+
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                Swal.fire({
+                    title: "Cuidado!",
+                    text: "Deseja realmente excluir este usuário? Esta ação não pode ser desfeita!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Sim, excluir!",
+                    cancelButtonText: "Cancelar"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.closest('form').submit();
+                    }
+                });
+            });
+        });
+    });
+</script>
 
 
 <script>

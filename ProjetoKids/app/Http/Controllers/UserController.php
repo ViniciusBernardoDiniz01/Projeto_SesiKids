@@ -145,7 +145,7 @@ class UserController extends Controller
             ->orderBy('created_at')
             ->get();
 
-        $totalRecords = $users->count('id');
+        $totalRecords = $users->count();
 
         $numberRecordsAllowed = 500;
 
@@ -180,7 +180,7 @@ public function comentarioPDF(Request $request)
             ->orderBy('id')
             ->get();
 
-        $totalRecords = $users->count('id');
+        $totalRecords = $users->count();
 
         $numberRecordsAllowed = 500;
 

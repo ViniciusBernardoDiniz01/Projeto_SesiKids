@@ -134,6 +134,8 @@ class RoleController extends Controller
         try {
             // Excluir o registro do banco de dados
             $role->delete();
+            // Salvar log
+            Log::info('Papel excluído com sucesso.', ['papel_id' => $role->id, 'action_user_id' => Auth::id()]);
 
             // Redirecionar o usuário, enviar a mensagem de sucesso
             return redirect()->route('role.index')->with('success', 'Papel excluído com sucesso!');

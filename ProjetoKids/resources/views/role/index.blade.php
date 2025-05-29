@@ -110,8 +110,6 @@
     <!-- Adicione no final do body -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
 document.addEventListener('DOMContentLoaded', function() {
     // Confirmação de exclusão
     const deleteButtons = document.querySelectorAll('.btn-delete');
@@ -134,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
 
     // Exibe mensagem de erro do backend (impossível deletar)
     @if(session('error'))
