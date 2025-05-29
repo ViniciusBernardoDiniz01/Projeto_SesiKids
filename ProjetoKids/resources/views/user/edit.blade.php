@@ -75,7 +75,7 @@
                     @empty
                         <option value="" disabled>Nenhum papel encontrado</option>
                     @endforelse
-                    </select><br><br>
+                    </select><br>
                 </div>
 
             <label for="image">Imagem:</label>

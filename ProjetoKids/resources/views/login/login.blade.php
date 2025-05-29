@@ -40,13 +40,13 @@
                         <span role="button" class="olho" onclick="togglePassword('Senha', this)">👀</span>
                     </div><br>
                     
-                    <button class="button">Enviar</button><br>
+                    <center><button class="button">Enviar</button><br></center>
                     <center>
                         <a href="{{ route('login.create-user')}}">Não tenho login</a>
                         <a href=""> / Esqueci meus dados</a>
                     </center>
                 </div>
-                <center><a href={{route('user.usuarioCadastrado')}} class="link">Admin</a></center>
+                <center><a href={{route('dashboard.index')}} class="link">Admin</a></center>
             </form>
         </section>
     </main>

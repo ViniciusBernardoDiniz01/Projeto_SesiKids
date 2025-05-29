@@ -79,7 +79,7 @@ form {
     padding: 30px;
 }
 
-.button {
+/* .button {
     border-radius: 15px;
     background-color: #7a37e6;
     color: white;
@@ -90,6 +90,26 @@ form {
     border: none;
     margin-top: 10px;
     width: 100%;
+} */
+
+
+.button {
+    background-color: #813cbe;
+    color: white;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    width: 95%;
+}
+
+.button:hover {
+    background-color: #552791;
+    transform: scale(1.04);
 }
 
 .input-image {

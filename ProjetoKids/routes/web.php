@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use Spatie\Permission\Contracts\Role;
 
 Route::get('/erro401', function () {
     abort(401);
@@ -48,25 +49,33 @@ Route::get('/jogos-user', [UserController::class, 'jogos'])->name('user.jogos');
 
 Route::group(['middleware' => 'auth'], function () {
 
-Route::get('/painel', [UserController::class, 'painel'])->name('dashboard.index');
+    Route::get('/painel', [UserController::class, 'painel'])->name('dashboard.index');
+
+    //perfis
+    Route::get('/index-role', [RoleController::class, 'index'])->name('role.index')->middleware('permission:index-role');
+    Route::get('/create-role', [RoleController::class, 'create'])->name('role.create')->middleware('permission:create-role');
+    Route::post('/store-role', [RoleController::class, 'store'])->name('role.store')->middleware('permission:create-role');
+    Route::get('/edit-role/{role}', [RoleController::class, 'edit'])->name('role.edit')->middleware('permission:edit-role');
+    Route::put('/update-role/{role}', [RoleController::class, 'update'])->name('role.update')->middleware('permission:edit-role');
+    Route::delete('/destroy-role/{role}', [RoleController::class, 'destroy'])->name('role.destroy')->middleware('permission:destroy-role');
 
 
-Route::get('/cadastrados-user', [UserController::class, 'usuarioCadastrado'])->name('user.usuarioCadastrado')->middleware('permission:cadastrados-user');
+    Route::get('/cadastrados-user', [UserController::class, 'usuarioCadastrado'])->name('user.usuarioCadastrado')->middleware('permission:cadastrados-user');
 
-// esta rota é para mostrar o usuário
-Route::get('/show-user/{user}', [UserController::class, 'show'])->name('user.show')->middleware('permission:show-user');
+    // esta rota é para mostrar o usuário
+    Route::get('/show-user/{user}', [UserController::class, 'show'])->name('user.show')->middleware('permission:show-user');
 
-// esta rota é para editar o usuário
-Route::get('/edit-user/{user}', [UserController::class, 'edit'])->name('user.edit')->middleware('permission:edit-user');
+    // esta rota é para editar o usuário
+    Route::get('/edit-user/{user}', [UserController::class, 'edit'])->name('user.edit')->middleware('permission:edit-user');
 
-// esta rota é para atualizar o usuário
-Route::put('/update-user/{user}', [UserController::class, 'update'])->name('user.update')->middleware('permission:edit-user');
+    // esta rota é para atualizar o usuário
+    Route::put('/update-user/{user}', [UserController::class, 'update'])->name('user.update')->middleware('permission:edit-user');
 
-//rota para deletar o usuário
-Route::delete('/destroy-user/{user}', [UserController::class, 'destroy'])->name('user.destroy')->middleware('permission:destroy-user');
+    //rota para deletar o usuário
+    Route::delete('/destroy-user/{user}', [UserController::class, 'destroy'])->name('user.destroy')->middleware('permission:destroy-user');
 
-Route::get('/generate-pdf-user', [UserController::class, 'generatePDF'])->name('user.generate-pdf');
+    Route::get('/generate-pdf-user', [UserController::class, 'generatePDF'])->name('user.generate-pdf');
 
-Route::get('/generate-pdf-comentario', [UserController::class, 'comentarioPDF'])->name('user.comentario-pdf');
+    Route::get('/generate-pdf-comentario', [UserController::class, 'comentarioPDF'])->name('user.comentario-pdf');
 
 });

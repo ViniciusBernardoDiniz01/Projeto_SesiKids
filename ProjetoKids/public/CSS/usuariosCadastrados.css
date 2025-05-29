@@ -290,6 +290,25 @@ hr {
     margin: 10px;
 
 }
+
+.button-jogo {
+    background-color: #813cbe;
+    color: white;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    width: 90%;
+}
+
+.button-jogo:hover {
+    background-color: #552791;
+    transform: scale(1.04);
+}
 /* Botões de Cadastrar e Gerar PDF */
 .Cadastrar,
 .CriaPdf {

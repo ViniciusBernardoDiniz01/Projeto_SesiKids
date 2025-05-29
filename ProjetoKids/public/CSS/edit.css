@@ -77,8 +77,23 @@ a:hover {
 /* Main Content */
 main {
     padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+}
+
+.form-class{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(126, 87, 194, 0.10);
+    margin: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.form-class:focus-within {
+    border-color: #6a0dad; /* Roxo escuro */
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 13, 173, 0.5); /* Roxo escuro */
 }
 
 /* Section Styles */

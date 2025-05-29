@@ -16,8 +16,14 @@
         </div>
         <div class="header-center">
             <a href="painel" class="painel">Criar Jogos</a>
-                @can('create-user-login')
+                @can('index-role')
+                    <a href="{{ route('role.index') }}" class="painel">Perfis</a>
+                @endcan
+                @can('cadastrados-user')
                     <a href="{{ route('user.usuarioCadastrado') }}" class="painel">Usuários</a>
+                @endcan
+                @can('create-user-login')
+                    <a href="{{ route('login.create-user') }}" class="painel">Cadastrar</a>
                 @endcan
         </div>
         <div class="header-right" style="display: flex; flex-direction: column; align-items: center;">
@@ -57,7 +63,7 @@
                     <label for="image">Imagem:</label>
                     <input type="file" name="image" id="image" class="input-image"><br>
                     
-                    <center><button type="submit" class="button" style="width: 80%">Enviar</button></center><br>
+                    <center><button type="submit" class="button-jogo">Enviar</button></center><br>
                 </div>
             </div>
             </form>

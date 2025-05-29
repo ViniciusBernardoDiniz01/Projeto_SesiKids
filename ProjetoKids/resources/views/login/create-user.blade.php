@@ -61,7 +61,7 @@
                     <label for="image">Imagem:</label>
                     <input type="file" name="image" id="image" class="input-image"><br>
                     
-                    <button type="submit" class="button">Enviar</button><br>
+                    <center><button type="submit" class="button">Enviar</button><br></center><br>
                     <center><a href="{{ route("login") }}">Já tenho login</a></center>
                 </div>
             </div>
