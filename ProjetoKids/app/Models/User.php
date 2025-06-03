@@ -17,7 +17,7 @@ class User extends Authenticatable implements Auditable
     protected $table = 'users'; // Certifique-se de que o nome da tabela está correto
     
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, SoftDeletes , AuditingTable, HasRoles;
+    use HasFactory, Notifiable, AuditingTable, HasRoles, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.

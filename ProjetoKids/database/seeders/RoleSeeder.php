@@ -31,6 +31,8 @@ class RoleSeeder extends Seeder
                 'create-role',
                 'edit-role',
                 'destroy-role',
+                'role-permission',
+                'update-role',
             ]);
         }
 

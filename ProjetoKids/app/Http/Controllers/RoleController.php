@@ -13,7 +13,7 @@ use Spatie\Permission\Models\Role;
 class RoleController extends Controller
 {
     // Listar os papéis
-    public function index()
+    public function index(Role $role)
     {
         
         // Recuperar os registros do banco dados
@@ -114,8 +114,6 @@ class RoleController extends Controller
     // Excluir o papel do banco de dados
     public function destroy(Role $role)
     {
-        return redirect()->route('role.index')->with('error', 'Não é possível excluir o papel porque há usuários associados a ele.');
-
         if ($role->name == 'Super Admin') {
             // Salvar log
             Log::warning('Papel super admin não pode ser excluído.', ['papel_id' => $role->id, 'action_user_id' => Auth::id()]);
@@ -126,7 +124,7 @@ class RoleController extends Controller
 
         // Não permitir excluir papel quando tem algum usuário utilizando o papel
         if ($role->users->isNotEmpty()) {
- 
+
             // Redirecionar o usuário, enviar a mensagem de erro
             return redirect()->route('role.index')->with('error', 'Não é possível excluir o papel porque há usuários associados a ele.');
         }
@@ -134,6 +132,7 @@ class RoleController extends Controller
         try {
             // Excluir o registro do banco de dados
             $role->delete();
+
             // Salvar log
             Log::info('Papel excluído com sucesso.', ['papel_id' => $role->id, 'action_user_id' => Auth::id()]);
 
