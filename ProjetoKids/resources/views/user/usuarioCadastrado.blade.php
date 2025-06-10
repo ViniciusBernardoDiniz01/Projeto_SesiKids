@@ -92,9 +92,6 @@
                 </span>
             </span>
         </div>
-
-
-
         <div class="img">
             @if (isset($Sist->image))
                 <img src="{{ asset('IMG/' . $Sist->image) }}" alt="Foto de perfil" class="img-thumbnail" style="width: 50px; height: 50px; border-radius: 100%;">
@@ -106,10 +103,10 @@
         <div class="botaos">
         <a href="{{ route('user.show', ['user'=> $Sist->id ])}}" id="boston-1" class="boston">Visualizar</a>
         <a href="{{ route('user.edit', ['user'=> $Sist->id ])}}" id="boston-2" class="boston">Editar</a>
-        <form action="{{ route('user.destroy', ['user'=> $Sist->id ])}}" method="POST" style="margin: 0; padding: 0;">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="boston exclui">Excluir</button>
+        <form action="{{ route('user.destroy', ['user'=> $Sist->id ])}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="boston exclui" onclick="">Excluir</button>
         </form>
         </div>
         </div>
