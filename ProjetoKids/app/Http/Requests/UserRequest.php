@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use PhpParser\Node\Expr\FuncCall;
 
 class UserRequest extends FormRequest
 {
@@ -21,25 +22,26 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
-        $userID = $this->route('users') ? $this->route('users')->id : null;
-        
-    return [
-        'name' => 'required',
-        'email' => 'required|email|unique:users,email,' . $userID, // Corrigido para 'users'
-        'password' => 'required|confirmed|min:6',
-    ];
+        $userID = $this->route('user');
+
+        return [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . ($userID ? $userID->id : null),
+            // 'password' => 'required|confirmed|min:6', //mínimo 6 caracteres
+        ];
     }
 
-    public function messages()
-    {
-        return [
+    //Traduzir as mensagens de validação do formulário
+    public function messages(){
+        return[
             'name.required' => 'Campo nome Obrigatório!',
-            'email.required' => 'Campo email Obrigatório',
-            'email.email' => 'Insira um email válido! example: example@site.com',
-            'email.unique' => 'Este email já está cadastrado',
-            'password.required' => 'Campo senha Obrigatório',
-            'password.confirmed' => 'As senhas não conferem',
-            'password.min' => 'A senha deve conter no mínimo :min caracteres',
+            'email.required' => 'Campo E-mail Obrigatório!',
+            'email.email' => 'Necessário enviar um e-mail válido! example@site.com',
+            'email.unique' => 'E-mail já cadastrado!',
+            'password.required' => 'Campo senha Obrigatório!',
+            'password.confirmed' => 'As senhas não são idênticas!',
+            'password.min' => 'A senha deve ter no mínimo :min carateres!',
         ];
+
     }
 }
