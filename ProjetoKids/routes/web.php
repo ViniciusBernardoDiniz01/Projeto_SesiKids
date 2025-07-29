@@ -59,8 +59,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-role/{role}', [RoleController::class, 'edit'])->name('role.edit')->middleware('permission:edit-role');
     Route::put('/update-role/{role}', [RoleController::class, 'update'])->name('role.update')->middleware('permission:edit-role');
     Route::delete('/destroy-role/{role}', [RoleController::class, 'destroy'])->name('role.destroy')->middleware('permission:destroy-role');
-    
 
+    
     // rota para exibir as permissões do papel
     Route::get('role-permission/{role}', [RolePermissionController::class, 'index'])->name('role-permission.index');
 

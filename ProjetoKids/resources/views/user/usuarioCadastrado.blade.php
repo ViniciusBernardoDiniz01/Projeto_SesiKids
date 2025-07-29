@@ -104,10 +104,43 @@
         <a href="{{ route('user.show', ['user'=> $Sist->id ])}}" id="boston-1" class="boston">Visualizar</a>
         <a href="{{ route('user.edit', ['user'=> $Sist->id ])}}" id="boston-2" class="boston">Editar</a>
         <form action="{{ route('user.destroy', ['user'=> $Sist->id ])}}" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="boston exclui" onclick="">Excluir</button>
-        </form>
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="boston" id="exclui" onclick="">Excluir</button>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const deleteButton = document.querySelector('#exclui');
+        
+                if (deleteButton) {
+                    deleteButton.addEventListener('click', function(event) {
+                        event.preventDefault(); // Impede o envio padrão do formulário
+        
+                        Swal.fire({
+                            title: "Cuidado!",
+                            text: "Deseja realmente excluir este usuário? Esta ação não pode ser desfeita!",
+                            icon: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#3085d6",
+                            cancelButtonColor: "#d33",
+                            confirmButtonText: "Sim, excluir!",
+                            cancelButtonText: "Cancelar"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire({
+                                    title: "Excluído!",
+                                    text: "O usuário foi deletado com sucesso.",
+                                    icon: "success",
+                                    confirmButtonColor: "#3085d6",
+                                }).then(() => {
+                                    this.closest('form').submit(); // Envia o formulário após a confirmação
+                                });
+                            }
+                        });
+                    });
+                }
+            });
+        </script>
+    </form>
         </div>
         </div>
         <hr>
@@ -115,31 +148,5 @@
         @endforelse
     </footer>
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const deleteButtons = document.querySelectorAll('.exclui');
-
-    deleteButtons.forEach(button => {
-        button.addEventListener('click', function(event) {
-            event.preventDefault();
-
-            Swal.fire({
-                title: "Cuidado!",
-                text: "Deseja realmente excluir este usuário? Esta ação não pode ser desfeita!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Sim, excluir!",
-                cancelButtonText: "Cancelar"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    this.closest('form').submit(); // Envia o formulário imediatamente
-                }
-            });
-        });
-    });
-});
-</script>
 </body>
 </html>
