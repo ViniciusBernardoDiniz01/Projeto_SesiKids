@@ -14,37 +14,50 @@
     <header class="cabecario">
         <h1 class="titulo">Jogos de Biologia</h1>
         <a href="{{route("user.index")}}" id="sair" type="button">Sair</a>
-        <p>imagem logo</p>
+        <p style="color: #215143">imagem logo</p>
     </header>
     <div class="containerJogos">
         <div class="jogo1">
             <div class="foto1">
-                <img src="/img/images.jpg" class="roblox-imagem" alt="">
-            </div>
-            <a href="#" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
+                <img src="/img/anfibios.png" class="roblox-imagem" alt="">
+                <center><h1 style="color: #093e0c">Anfibios</h1></center>
+            </div><br><br>
+            <a href="https://viniciusbernardodiniz01.github.io/Anfibios/" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
         </div>
         <div class="jogo2">
             <div class="foto2">
-                <img src="/img/images.jpg" class="roblox-imagem" alt="">
-            </div>
-            <a href="#" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
+                <img src="/img/repteis.png" class="roblox-imagem" alt="">
+                <center><h1 style="color:#093e0c">Repteis</h1></center>
+            </div><br><br>
+            <a href="https://viniciusspinto.github.io/R-pteis/" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
         </div>
         <div class="jogo3">
             <div class="foto3">
-                <img src="/img/images.jpg" class="roblox-imagem" alt="">
+                <img src="/img/mamiferos.png" class="roblox-imagem" alt="">
+                <center><h1 style="color:#093e0c">Mamiferos</h1></center>
+            </div><br><br>
+            <a href="https://viniciusspinto.github.io/Mamiferos/" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
+        </div>
+        <div class="jogo4">
+            <div class="foto4">
+                <img src="" class="roblox-imagem" alt="">
             </div>
             <a href="#" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
         </div>
         <div class="jogo4">
             <div class="foto4">
-                <img src="/img/images.jpg" class="roblox-imagem" alt="">
+                <img src="" class="roblox-imagem" alt="">
+            </div>
+            <a href="#" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
+        </div>
+        <div class="jogo4">
+            <div class="foto4">
+                <img src="" class="roblox-imagem" alt="">
             </div>
             <a href="#" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
         </div>
     </div>
-    <footer class="incerramento">
-        <a href="#" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Proximo</a>
-    </footer>
+    
     <script src="./script.js"></script>
 </body>
 </html>

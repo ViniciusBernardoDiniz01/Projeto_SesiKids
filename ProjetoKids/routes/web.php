@@ -48,6 +48,7 @@ Route::get('/jogos-user', [UserController::class, 'jogos'])->name('user.jogos');
 
 
 
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/painel', [UserController::class, 'painel'])->name('dashboard.index');

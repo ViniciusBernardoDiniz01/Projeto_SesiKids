@@ -38,7 +38,7 @@ body{
     justify-content: space-between;
     align-items: center;
     margin: 0px 0px 5px 0px;
-    padding: 10px;
+    padding: 20px;
     background-color: rgb(32, 81, 67);
 }
 
@@ -52,13 +52,13 @@ body{
     background-color: rgb(32, 81, 67);
     margin: 20px;
     margin-bottom: 10px;
-    height: 80%;
+    height: 60%;
     border-radius: 15px;
 }
 
 .jogo1, .jogo2, .jogo3, .jogo4{
     display: flex;
-    margin: 5%;
+    margin: 2%;
     background-color: #f2f2f2;
     padding: 10px;
     height: 400px;

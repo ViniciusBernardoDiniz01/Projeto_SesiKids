@@ -46,7 +46,6 @@
                         <a href=""> / Esqueci meus dados</a>
                     </center>
                 </div>
-                <center><a href={{route('dashboard.index')}} class="link">Admin</a></center>
             </form>
         </section>
     </main>

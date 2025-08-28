@@ -2,6 +2,7 @@
     margin: 0;
     font-family: sans-serif;
     padding: 0;
+    
 }
 
 body {
@@ -24,9 +25,10 @@ header p {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 25px;
     background-color: #7a37e6;
     color: #7a37e6;
+    font-size: 38px;
 }
 
 .heade {
@@ -51,7 +53,7 @@ header p {
     margin-bottom: 0.5rem;
     margin-left: 30px;
     margin: 5px;
-    margin-top: 20px;
+    margin-top: 25px;
     height: 50%;
     align-self: flex-start;
 }
