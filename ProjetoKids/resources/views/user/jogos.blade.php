@@ -40,9 +40,10 @@
         </div>
         <div class="jogo4">
             <div class="foto4">
-                <img src="" class="roblox-imagem" alt="">
-            </div>
-            <a href="#" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
+                <img src="/img/artropodes.png" class="roblox-imagem" alt="">
+                <center><h1 style="color:#093e0c">Artropodes</h1></center>
+            </div><br><br>
+            <a href="https://viniciusspinto.github.io/Artropodes1/" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
         </div>
         <div class="jogo4">
             <div class="foto4">
