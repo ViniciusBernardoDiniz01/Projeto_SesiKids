@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Página de Login</title>
 </head>
 <body>
@@ -11,6 +12,7 @@
     <header>
         <a href="{{ route('login.create-user') }}" class="link-2">Voltar</a>
         <h1 class="h1-titulo">Bem-vindo à nossa página de login para Professores</h1>
+        <p style="color: #934ffa">.</p>
     </header>
     <main>
         <section>
@@ -20,16 +22,6 @@
 
                 <div class="login"><h2>Login</h2></div>
 
-                {{-- @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li style="color: red">{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif --}}
-
                 <div class="formulario">
                     <label for="fname">Email:</label>
                     <input placeholder="Digite seu E-mail" type="text" class="input-email" id="Email" name="email"><br>
@@ -37,7 +29,9 @@
                     <label for="lname">Senha:</label>
                     <div class="mostrar">
                         <input placeholder="Digite sua Senha" type="password" class="input-senha" id="Senha" name="password">
-                        <span role="button" class="olho" onclick="togglePassword('Senha', this)">👀</span>
+                        <span role="button" class="olho" onclick="togglePassword('Senha', this)">
+                            <i class="fa-solid fa-eye"></i>
+                        </span>
                     </div><br>
                     
                     <center><button class="button">Enviar</button><br></center>
@@ -53,12 +47,16 @@
     <script>
         function togglePassword(inputId, element) {
             const input = document.getElementById(inputId);
+            const icon = element.querySelector("i");
+
             if (input.type === "password") {
                 input.type = "text";
-                element.innerHTML = "🙈"; // Ícone para ocultar
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
             } else {
                 input.type = "password";
-                element.innerHTML = "👀"; // Ícone para mostrar
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
             }
         }
     </script>

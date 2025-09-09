@@ -14,9 +14,14 @@ class UserController extends Controller
         return view("user.create");
     }
 
-    public function jogos(){
-        return view("user.jogos");
+    public function jogosBio(){
+        return view("user.jogosBio");
     }
+
+    public function menuJogos(){
+        return view("user.menuJogos");
+    }
+
     public function show(User $user){
         return view("user.show", ['user' => $user]);
     }

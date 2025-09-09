@@ -41,17 +41,17 @@
                 <div class="formulario">
 
             <div class="formulario">
-                <label for="fname">Nome:</label><br>
+                <label for="fname">Nome:</label>
                 <input 
                     placeholder="Digite o Nome do jogo" 
                     type="text" 
                     class="input-email" 
                     id="Email" 
                     name="name" 
-                    value=""><br>
+                    value="">
 
-                <label for="fname">Link:</label><br>
-                <input placeholder="Digite o link do jogo" type="email" class="input-email" id="Email" name="email" value="" required><br>
+                <label for="fname">Link:</label>
+                <input placeholder="Digite o link do jogo" type="email" class="input-email" id="Email" name="email" value="" required>
             
 
                 <label for="password">Descrição:</label>

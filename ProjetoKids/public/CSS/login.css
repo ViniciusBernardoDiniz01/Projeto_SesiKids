@@ -1,318 +1,154 @@
-*{
+* {
     margin: 0;
+    padding: 0;
     font-family: sans-serif;
-    padding: 0; 
-}
-
-body{
-    background-image: url(/img/3.jpg);
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
-}
-
-header{
-    background-color: #7a37e6;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    padding: 20px;
-    color: white;
-    flex-direction:row;
-}
-
-
-.h1-titulo{
-    position: relative;
-    right: 21%;
-}
-
-.link-2{
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #ecb2ff; /* Roxo médio */
-    color: #550d64;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-form{
-    background-color: #dfd9ff;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    margin-left: 100px;
-    margin-right: 800px;
-    margin-top: 100px;
-    padding: 0px;
-    border-radius: 20px;
-}
-
-.login{
-    background-color: #7a37e6;
-    justify-content: center;
-    display: flex;
-    border-radius: 20px 20px 0px 0px;
-    color: white;
-    margin-bottom: 10px;
-    padding: 30px;
-}
-
-
-
-/* .button{
-    border-radius: 15px;
-    background-color: #7a37e6;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-} */
-
-.button {
-    display: flex;
-    background-color: #813cbd;
-    color: white;
-    padding: 12px 32px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    width: 90%;
-    justify-content: center;
-}
-
-.button:hover {
-    background-color: #552791;
-    transform: scale(1.04);
-}
-
-.input-email{
-    border-radius: 15px;
-    padding: 20px;
-    font-size: 16px;
-    border: solid 0.5px #cf37e6;
-    outline: none;
     box-sizing: border-box;
 }
 
-
-
-.input-email:focus{
-    border-color: #6a0dad; /* Roxo escuro */
-    outline: none;
-    box-shadow: 0 0 5px rgba(106, 13, 173, 0.5); /* Roxo escuro */
-}
-
-.input-senha:focus{
-    border-color: #6a0dad; /* Roxo escuro */
-    outline: none;
-
-    box-shadow: 0 0 5px rgba(106, 13, 173, 0.5); /* Roxo escuro */
-}
-
-.formulario{
-    padding: 30px;
+/* Fundo */
+body {
+    background: url(/img/4.jpg) no-repeat center center fixed;
+    background-size: cover;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
-input{
-    border: solid 0.5px #cf37e6;
-    border-radius: 15px;
-    padding: 10px;
-    margin: 5px;
-    }
 
+/* ---------------- HEADER ---------------- */
+header {
+    background: linear-gradient(90deg, #7a37e6, #9b57ff);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+header a {
+    background: #ecb2ff;
+    color: #550d64;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+header a:hover {
+    background: #d490ff;
+}
+
+/* ---------------- FORM ---------------- */
+form {
+    margin-top: 160px; /* afasta do header */
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+    padding-bottom: 25px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Faixa roxa do título */
+.login {
+    background: linear-gradient(90deg, #7a37e6, #9b57ff);
+    color: #fff;
+    padding: 25px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 15px;
+}
+
+/* Conteúdo do formulário */
+.formulario {
+    padding: 20px 40px;
+    text-align: left;
+}
+
+/* Labels */
+.formulario label {
+    font-weight: bold;
+    color: #550d64;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+/* Inputs */
+.input-email,
+.input-senha,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: 1px solid #cf37e6;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.input-email:focus,
+.input-senha:focus {
+    border-color: #7a37e6;
+    box-shadow: 0 0 6px rgba(122, 55, 230, 0.5);
+    outline: none;
+}
+
+/* Mostrar senha */
 .mostrar {
     position: relative;
     display: flex;
     align-items: center;
-    width: 100%; /* Garante que o container ocupe toda a largura */
-}
-
-.input-senha {
-    width: 100%; /* O input ocupa toda a largura do container */
-    padding-right: 40px; /* Espaço para o ícone do olho */
-    border-radius: 15px;
-    padding: 20px;
-    font-size: 16px;
-    border: solid 0.5px #cf37e6;
-    outline: none;
-    box-sizing: border-box;
 }
 
 .olho {
     position: absolute;
-    right: 10px; /* Posiciona o ícone no lado direito do input */
+    right: 12px;
     cursor: pointer;
-    font-size: 25px;
-    color: #666;
-    user-select: none;
-    margin-right: 10px; 
-    margin-top: -5px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    color: #7a37e6;
+    transition: 0.2s;
 }
 
 .olho:hover {
-    color: #000; /* Muda a cor ao passar o mouse */
-    opacity: 0.8;
+    color: #550d64;
 }
 
-.boston{
-    border-radius: 10px;
-    background-color: #7a37e6;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    margin: 2px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.link {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #9575cd; /* Roxo médio */
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    width: 20%;
-    margin: 5px;
-}
-
-.link:hover {
-    background-color: #7e57c2; /* Roxo um pouco mais escuro */
-    text-decoration: none;
-    color: #ffffff; /* Roxo escuro */
-}
-
-footer{
-    background-color: #fff;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    font-size: 0.79rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.boston{
-    text-decoration: none;
+/* Botão */
+.button {
+    background: linear-gradient(90deg, #7a37e6, #9b57ff);
     color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px;
+    cursor: pointer;
+    width: 90%;
+    margin: 10px auto 0;
+    display: block;
+    transition: 0.3s;
 }
 
-.boston:hover{
-    background-color: #6b3f9e;
-}
-
-.alert {
-    background-color: #f8d7da; /* Fundo vermelho claro */
-    color: #721c24; /* Texto vermelho escuro */
-    border: 1px solid #f5c6cb; /* Borda vermelha */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 10px 15px; /* Espaçamento interno */
-    margin-bottom: 20px; /* Espaçamento inferior */
-    font-size: 14px; /* Tamanho da fonte */
-    margin: 20px; /* Espaçamento em volta do alerta */
-}
-
-.alert ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none; /* Remove os marcadores da lista */
-}
-
-.alert li {
-    margin-bottom: 5px; /* Espaçamento entre os itens */
-}
-
-/* Responsividade para telas menores que 768px (tablets e celulares grandes) */
-@media (max-width: 1000px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .h1-titulo {
-        position: static;
-        margin-bottom: 10px;
-    }
-
-    form {
-        width: 90%; /* Reduz a largura do formulário */
-        margin: 10px;
-    }
-
-    .button {
-        padding: 15px; /* Ajusta o tamanho do botão */
-        font-size: 14px;
-    }
-
-    .input-email,
-    .input-senha {
-        padding: 15px; /* Ajusta o padding dos inputs */
-        font-size: 14px; /* Reduz o tamanho da fonte */
-    }
-
-    .olho {
-        font-size: 20px; /* Ajusta o tamanho do ícone */
-    }
-}
-
-/* Responsividade para telas menores que 480px (celulares pequenos) */
-@media (max-width: 480px) {
-    header {
-        padding: 15px;
-        margin-bottom: 10px;
-    }
-
-    .h1-titulo {
-        font-size: 18px; /* Reduz o tamanho do título */
-    }
-
-    form {
-        width: 100%; /* O formulário ocupa toda a largura */
-        margin: 10px;
-    }
-
-    .button {
-        padding: 10px; /* Ajusta o tamanho do botão */
-        font-size: 12px;
-    }
-
-    .input-email,
-    .input-senha {
-        padding: 10px; /* Ajusta o padding dos inputs */
-        font-size: 12px; /* Reduz o tamanho da fonte */
-    }
-
-    .olho {
-        font-size: 18px; /* Ajusta o tamanho do ícone */
-    }
-
-    .link {
-        font-size: 12px; /* Reduz o tamanho dos links */
-    }
+.button:hover {
+    background: linear-gradient(90deg, #6a2ed9, #832dff);
+    transform: scale(1.03);
 }

@@ -44,7 +44,8 @@ Route::get('/logout', function () {
 })->name('logout');
 
 Route::get('/', [UserController::class, 'index'])->name('user.index');
-Route::get('/jogos-user', [UserController::class, 'jogos'])->name('user.jogos');
+Route::get('/menu-jogos', [UserController::class, 'menuJogos'])->name('user.menuJogos');
+Route::get('/jogosBio-user', [UserController::class, 'jogosBio'])->name('user.jogosBio');
 
 
 

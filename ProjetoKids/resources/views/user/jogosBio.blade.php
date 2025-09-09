@@ -13,7 +13,7 @@
 <body>
     <header class="cabecario">
         <h1 class="titulo">Jogos de Biologia</h1>
-        <a href="{{route("user.index")}}" id="sair" type="button">Sair</a>
+        <a href="{{route("user.menuJogos")}}" id="sair" type="button">Sair</a>
         <p style="color: #215143">imagem logo</p>
     </header>
     <div class="containerJogos">
