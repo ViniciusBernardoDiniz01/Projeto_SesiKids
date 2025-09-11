@@ -14,7 +14,7 @@
             <h1>Bem-vindo à nossa página</h1>
             <b><h3>Crie sua conta!</h3></b>
         </div>
-        <p style="display: hidden;">.</p>
+        <p style="color: #934ffa">.</p>
     </header>
     <main>
         <section>
@@ -67,7 +67,12 @@
                     <input type="file" name="image" id="image" class="input-image"><br>
                     
                     <center><button type="submit" class="button">Enviar</button><br></center><br>
-                    <center><a href="{{ route("login") }}">Já tenho login</a></center>
+                    <center>
+                        <a href="{{ route("login") }}">Já tenho login</a> 
+                        @can('cadastrados-user')
+                            <a href="{{ route('dashboard.index')}}">/Adm</a>
+                        @endcan 
+                    </center>
                 </div>
             </div>
             </form>

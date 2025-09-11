@@ -7,7 +7,69 @@
     <link rel="stylesheet" href="{{ asset('css/usuariosCadastrados.css') }}">
     <link rel="stylesheet" href="{{ asset('css/createUser.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>Document</title>
+    <title>Feedback</title>
+
+    <style>
+        /* Estilização dos inputs */
+        .formulario input[type="text"], 
+        .formulario textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 2px solid #a67ff0;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .formulario input[type="text"]:focus, 
+        .formulario textarea:focus {
+            border-color: #6c3ddb;
+            box-shadow: 0 0 5px #a67ff0;
+        }
+
+        .rating {
+            display: flex;
+            flex-direction: row-reverse; /* inverte a ordem */
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 3rem;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .rating input:checked ~ label,
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #ffc107; /* dourado */
+        }
+
+        .button {
+            background: linear-gradient(90deg, #8e2de2, #4a00e0);
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -15,7 +77,7 @@
             <a href="{{ route('logout') }}" class="link">Sair</a>
         </div>
         <div class="header-center">
-            <a href="painel" class="painel">Criar Jogos</a>
+            <a href="painel" class="painel">Feedback</a>
                 @can('index-role')
                     <a href="{{ route('role.index') }}" class="painel">Perfis</a>
                 @endcan
@@ -36,39 +98,42 @@
     <main>
         <section>
             <form method="POST" enctype="multipart/form-data">
-
-                <div class="login"><h2>Jogos</h2></div>
+                <div class="login"><h2>Digite seu Feedback</h2></div>
                 <div class="formulario">
-
-            <div class="formulario">
-                <label for="fname">Nome:</label>
-                <input 
-                    placeholder="Digite o Nome do jogo" 
-                    type="text" 
-                    class="input-email" 
-                    id="Email" 
-                    name="name" 
-                    value="">
-
-                <label for="fname">Link:</label>
-                <input placeholder="Digite o link do jogo" type="email" class="input-email" id="Email" name="email" value="" required>
-            
-
-                <label for="password">Descrição:</label>
-                <div class="mostrar">
-                    <input placeholder="De uma breve descrição do jogo" type="text" class="input-senha" id="descricao" name="descricao">
-                    <span role="button"></span>
-                </div>
-
-                    <label for="image">Imagem:</label>
-                    <input type="file" name="image" id="image" class="input-image"><br>
                     
-                    <center><button type="submit" class="button-jogo">Enviar</button></center><br>
+                    <form method="POST" action="{{ route('feedback.store') }}" enctype="multipart/form-data">
+                        @csrf
+
+                        <div class="rating">
+                            <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                            <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                            <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                            <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                            <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                        </div>
+                    </form>
+
+
+                    <label for="name">Nome:</label>
+                    <input 
+                        placeholder="Digite o Nome do seu Feedback" 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required>
+
+                    <label for="descricao">Descrição:</label>
+                    <textarea 
+                        placeholder="Digite o motivo desse Feedback" 
+                        id="descricao" 
+                        name="descricao" 
+                        rows="5" 
+                        required></textarea>
+
+                    <center><button type="submit" class="button">Enviar</button></center>
                 </div>
-            </div>
             </form>
         </section>
     </main>
-
 </body>
 </html>
