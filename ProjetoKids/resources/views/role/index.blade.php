@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/role.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/imagemsesisnai.css') }}">
     <title>Document</title>
 </head>
 <body>
     <div class="container-fluid px-4">
         <div class="header-center">
-            <a href="painel" class="painel">Criar Jogos</a>
+            <a href="painel" class="painel">Feedback</a>
                 @can('index-role')
                     <a href="{{ route('role.index') }}" class="painel">Perfis</a>
                 @endcan
@@ -25,6 +26,8 @@
             <h2 class="mt-3">Perfil</h2>
 
         </div>
+
+        <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
 
         <div class="card mb-4 border-light shadow">
 

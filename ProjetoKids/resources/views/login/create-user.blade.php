@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/createUser.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/imagemsesisnai.css') }}">
     <title>Pagina Login</title>
 </head>
 <body>
@@ -16,6 +17,7 @@
         </div>
         <p style="color: #934ffa">.</p>
     </header>
+    <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
     <main>
         <section>
             <form action=" {{route("login.storage")}}" method="POST" enctype="multipart/form-data">

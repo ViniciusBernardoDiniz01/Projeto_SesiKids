@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuários Cadastrados</title>
-
     <link rel="stylesheet" href="{{ asset('css/usuariosCadastrados.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -17,7 +16,7 @@
         </div>
 
         <div class="header-center">
-            <a href="painel" class="painel">Criar Jogos</a>
+            <a href="painel" class="painel">Feedback</a>
             @can('index-role')
                 <a href="{{ route('role.index') }}" class="painel">Perfis</a>
             @endcan
@@ -35,6 +34,13 @@
         </div>
     </header>
 
+    <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi" style="
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            top: 300;
+            right: 0;
+        ">
     <main>
         <!-- Pesquisa -->
         <section class="pesquisa">

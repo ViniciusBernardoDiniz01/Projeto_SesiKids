@@ -10,6 +10,11 @@
     <title>Feedback</title>
 
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-block:hidden;
+        }
         /* Estilização dos inputs */
         .formulario input[type="text"], 
         .formulario textarea {
@@ -27,6 +32,21 @@
         .formulario textarea:focus {
             border-color: #6c3ddb;
             box-shadow: 0 0 5px #a67ff0;
+        }
+
+        .logo-sesi {
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            top: 85px;
+            right: 0px;
+        }
+
+        @media (max-width: 900px) {
+            .logo-sesi {
+                width: 150px;
+                height: 20px;
+            }
         }
 
         .rating {
@@ -94,14 +114,15 @@
             </div>
         </div>
     </header>
-
+    
     <main>
+        <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
         <section>
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" style="margin-top: 1%;">
                 <div class="login"><h2>Digite seu Feedback</h2></div>
                 <div class="formulario">
                     
-                    <form method="POST" action="{{ route('feedback.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="#" enctype="multipart/form-data">
                         @csrf
 
                         <div class="rating">

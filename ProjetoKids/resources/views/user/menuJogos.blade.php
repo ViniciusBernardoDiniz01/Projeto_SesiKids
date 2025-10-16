@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seleção de Jogos</title>
     <link rel="stylesheet" href="{{ asset('css/menuJogos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/imagemsesisnai.css') }}">
 </head>
 
 <body>
     <header>
         <a href="{{route("user.index")}}"><button class="botao">Voltar</button></a>
         <h1>Selecione seu jogo</h1>
+        <p style="color: #934ffa">.</p>
     </header>
+
+    <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
 
     <div class="jogos">
         <div class="card">

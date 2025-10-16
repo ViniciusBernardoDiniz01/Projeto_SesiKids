@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/imagemsesisnai.css') }}">
     <title>Página de Login</title>
 </head>
 <body>
-    
     <header>
-        <a href="{{ route('login.create-user') }}" class="link-2">Voltar</a>
+        <a href="{{ route('user.index') }}" class="link-2">Voltar</a>
         <h1 class="h1-titulo">Bem-vindo à nossa página de login para Professores</h1>
         <p style="color: #934ffa">.</p>
+        <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
     </header>
     <main>
         <section>
