@@ -62,7 +62,6 @@
                     <div class="pesquisar-button">
                         <button type="submit" class="btn-pesquisa" style="font-size: 18px;">Pesquisar</button>
                         <a href="{{ url('generate-pdf-user?' . request()->getQueryString()) }}" class="btn-pesquisa">Pdf Pesquisa</a>
-                        <a href="{{ url('generate-pdf-comentario?' . request()->getQueryString()) }}" class="btn-pesquisa">Pdf Users</a>
                         <a href="{{ route('user.usuarioCadastrado') }}" class="btn-limpar">Limpar</a>
                     </div>
                 </div>
