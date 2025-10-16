@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/jogos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/imagemsesisnai.css') }}">
     <title>Escolha um jogo</title>
 </head>
 
@@ -58,7 +59,7 @@
             <a href="#" class="glow-on-hover" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Entrar</a>
         </div>
     </div>
-    
+    <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
     <script src="./script.js"></script>
 </body>
 </html>

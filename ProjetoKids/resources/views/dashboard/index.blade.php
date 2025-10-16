@@ -35,19 +35,14 @@
         }
 
         .logo-sesi {
-            width: 300px;
-            height: 50px;
-            position: absolute;
-            top: 85px;
-            right: 0px;
+            width: 10%;
+            height: 5%;
+            position: fixed;
+            bottom: 5px;
+            right: 5px;
+            opacity: 0.8;
         }
 
-        @media (max-width: 900px) {
-            .logo-sesi {
-                width: 150px;
-                height: 20px;
-            }
-        }
 
         .rating {
             display: flex;

@@ -35,11 +35,12 @@
     </header>
 
     <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi" style="
-            width: 300px;
-            height: 50px;
-            position: absolute;
-            top: 300;
-            right: 0;
+            width: 10%;
+            height: 5%;
+            position: fixed;
+            bottom: 5px;
+            right: 5px;
+            opacity: 0.8;
         ">
     <main>
         <!-- Pesquisa -->
