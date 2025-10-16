@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/show.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="{{ asset('css/imagemsesisnai.css') }}">
     <title>Document</title>
 </head>
 <body>
@@ -87,6 +88,8 @@
     
     Cadastrado em: {{\Carbon\Carbon::parse($user->created_at)->format('d/m/y H:i:s') }}<br>
     Atualizado em: {{\Carbon\Carbon::parse($user->updated_at)->format('d/m/y H:i:s') }}<br>
+
+    <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
 </div>
 </body>
 </html>

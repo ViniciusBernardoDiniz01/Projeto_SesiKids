@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/imagemsesisnai.css') }}">
     <link rel="stylesheet" href="{{ asset('css/edit.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Editar Usuário</title>
@@ -13,6 +14,8 @@
     <header>
         <h1>Editar Usuário</h1>
     </header>
+
+    <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
 
     <main>
         <div class="links-acoes">
