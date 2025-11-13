@@ -16,15 +16,18 @@
         </div>
 
         <div class="header-center">
-            <a href="painel" class="painel">Feedback</a>
+            <a href="/painel" class="painel">Home</a>
             @can('index-role')
                 <a href="{{ route('role.index') }}" class="painel">Perfis</a>
             @endcan
             @can('cadastrados-user')
-                <a href="{{ route('user.usuarioCadastrado') }}" class="painel ativo">Usuários</a>
+                <a href="{{ route('user.usuarioCadastrado') }}" class="painel">Usuários</a>
             @endcan
             @can('create-user-login')
                 <a href="{{ route('login.create-user') }}" class="painel">Cadastrar</a>
+            @endcan
+            @can('cadastrados-user')
+                <a href="{{ route('dashboard.comentarios') }}" class="painel">Comentários</a>
             @endcan
         </div>
 
@@ -50,7 +53,6 @@
                 <div class="links">
                     <a href="{{ route('login.create-user') }}" class="btn-pdf">Cadastrar</a>
                     <a href="{{ route('user.generate-pdf') }}" class="btn-pdf">Criar Pdf</a>
-                    <a href="{{ route('user.comentario-pdf') }}" class="btn-pdf">Pdf Comentários</a>
                 </div>
             </div><br>
             <hr>

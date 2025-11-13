@@ -11,16 +11,19 @@
 <body>
     <div class="container-fluid px-4">
         <div class="header-center">
-            <a href="painel" class="painel">Feedback</a>
-                @can('index-role')
-                    <a href="{{ route('role.index') }}" class="painel">Perfis</a>
-                @endcan
-                @can('cadastrados-user')
-                    <a href="{{ route('user.usuarioCadastrado') }}" class="painel">Usuários</a>
-                @endcan
-                @can('create-user-login')
-                    <a href="{{ route('login.create-user') }}" class="painel">Cadastrar</a>
-                @endcan
+            <a href="/painel" class="painel">Home</a>
+            @can('index-role')
+                <a href="{{ route('role.index') }}" class="painel">Perfis</a>
+            @endcan
+            @can('cadastrados-user')
+                <a href="{{ route('user.usuarioCadastrado') }}" class="painel">Usuários</a>
+            @endcan
+            @can('create-user-login')
+                <a href="{{ route('login.create-user') }}" class="painel">Cadastrar</a>
+            @endcan
+            @can('cadastrados-user')
+                <a href="{{ route('dashboard.comentarios') }}" class="painel">Comentários</a>
+            @endcan
         </div>
         <div class="mb-1 hstack gap-2">
             <h2 class="mt-3">Perfil</h2>

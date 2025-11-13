@@ -8,7 +8,10 @@ use App\Models\User;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use Spatie\Permission\Contracts\Role;
+
+use App\Http\Controllers\FeedbackController;
 
 Route::get('/erro401', function () {
     abort(401);
@@ -87,4 +90,22 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/generate-pdf-comentario', [UserController::class, 'comentarioPDF'])->name('user.comentario-pdf');
 
+
 });
+
+// Dashboard
+
+Route::middleware(['auth'])->group(function () {
+    // formulário para criar feedback
+    Route::get('/painel', [FeedbackController::class, 'index'])->name('dashboard.index');
+
+    // salvar feedback
+    Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
+
+    // página de comentários (usuários autenticados que acessam o painel podem ver)
+    Route::get('/dashboard/comentarios', [FeedbackController::class, 'comentarios'])->name('dashboard.comentarios');
+
+    // gerar PDF com formatação específica
+    Route::get('/feedback/pdf', [FeedbackController::class, 'pdfGerar'])->name('comentario-pdfgerar');
+});
+

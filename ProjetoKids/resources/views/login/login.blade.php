@@ -38,7 +38,6 @@
                     <center><button class="button">Enviar</button><br></center>
                     <center>
                         <a href="{{ route('login.create-user')}}">Não tenho login</a>
-                        <a href=""> / Esqueci meus dados</a>
                     </center>
                 </div>
             </form>
