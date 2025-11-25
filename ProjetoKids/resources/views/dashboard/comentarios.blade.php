@@ -5,6 +5,7 @@
     <title>Comentários - Feedbacks</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/usuariosCadastrados.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/imagemsesisnai.css') }}">
     <style>
         /* ajustes locais para manter identidade visual */
         body{background:#f7f7fb;margin:0;font-family:Inter, "Open Sans", Arial, sans-serif;color:#111}
@@ -58,6 +59,9 @@
             </div>
         </div>
     </header>
+
+    <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
+
     <main class="wrap" role="main">
         <div class="top">
             <div>

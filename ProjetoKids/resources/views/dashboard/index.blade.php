@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/usuariosCadastrados.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/imagemsesisnai.css') }}">
     <title>Bem-vindo!!</title>
     <style>
     :root{
@@ -235,6 +236,8 @@
             </div>
         </div>
     </header>
+
+    <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
 
     <!-- Banner de boas-vindas -->
     <section class="welcome-banner" role="region" aria-label="Boas-vindas">

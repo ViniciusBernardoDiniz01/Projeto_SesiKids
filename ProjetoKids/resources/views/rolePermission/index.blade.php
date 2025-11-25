@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/imagemsesisnai.css') }}">
     <style>
         body {
     background: #f3f0fa;
@@ -126,6 +127,8 @@
     <title></title>
 </head>
 <body>
+
+    <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
     <div class="card mb-4 border-light shadow">
 
             <div class="card-header hstack gap-2">

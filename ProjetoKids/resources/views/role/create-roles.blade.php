@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/role.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/imagemsesisnai.css') }}">
     <title>Document</title>
 </head>
 <body>
@@ -47,6 +48,7 @@
 
                 </form>
 
+                <img src="/img/timbre_sesi_senai.png" alt="" class="logo-sesi">
             </div>
         </div>
     </div>
